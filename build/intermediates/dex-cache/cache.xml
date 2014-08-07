@@ -8,17 +8,23 @@
         revision="19.1.0"
         sha1="1d779cb2b32a8a3171479f385e2f0b3996d8c416"/>
     <item
-        dex="/Users/eWalk_iOS/Documents/workspace/Android/GoodDoctor/app/build/intermediates/pre-dexed/debug/eventbus-2.2.0-f8fed0cf97990f86f4fd9f405b856c7a81aa54c5.jar"
-        jar="/Users/eWalk_iOS/Documents/workspace/Android/GoodDoctor/app/libs/eventbus-2.2.0.jar"
+        dex="/Users/eWalk_iOS/Documents/workspace/Android/GoodDoctor/app/build/intermediates/pre-dexed/debug/baidumapapi_v3_1_0-68d5e90b2d631cdd5d7dc5c2e2483b931e6c37e5.jar"
+        jar="/Users/eWalk_iOS/Documents/workspace/Android/GoodDoctor/app/libs/baidumapapi_v3_1_0.jar"
         jumboMode="false"
         revision="19.1.0"
-        sha1="8957e80562a7e6ac5d9421e46e0898336c06c307"/>
+        sha1="bc61ff1dc695258af5fba394df3b2fa45c756380"/>
     <item
         dex="/Users/eWalk_iOS/Documents/workspace/Android/GoodDoctor/app/build/intermediates/pre-dexed/debug/support-v4-19.1.0-d5fff3671c465a150d3a85ef5d4322e5b8ab517e.jar"
         jar="/Applications/Android/sdk/extras/android/m2repository/com/android/support/support-v4/19.1.0/support-v4-19.1.0.jar"
         jumboMode="false"
         revision="19.1.0"
         sha1="85f201b380937e61a9dce6ca90ccf6872abbfb67"/>
+    <item
+        dex="/Users/eWalk_iOS/Documents/workspace/Android/GoodDoctor/app/build/intermediates/pre-dexed/debug/eventbus-2.2.0-f8fed0cf97990f86f4fd9f405b856c7a81aa54c5.jar"
+        jar="/Users/eWalk_iOS/Documents/workspace/Android/GoodDoctor/app/libs/eventbus-2.2.0.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="8957e80562a7e6ac5d9421e46e0898336c06c307"/>
     <item
         dex="/Users/eWalk_iOS/Documents/workspace/Android/GoodDoctor/app/build/intermediates/pre-dexed/debug/classes-2ff62f978681e6363c022817fba8770cec180ca7.jar"
         jar="/Users/eWalk_iOS/Documents/workspace/Android/GoodDoctor/build/intermediates/exploded-aar/com.android.support/appcompat-v7/19.1.0/classes.jar"

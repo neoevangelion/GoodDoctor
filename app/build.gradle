@@ -1,6 +1,14 @@
 apply plugin: 'android'
 
 android {
+    signingConfigs {
+        developer {
+            keyAlias 'tuyuanlin'
+            keyPassword 'Eva198311'
+            storeFile file('/Users/eWalk_iOS/Documents/workspace/Android/GoodDoctor/developer_key.jks')
+            storePassword 'Eva198311'
+        }
+    }
     compileSdkVersion 19
     buildToolsVersion '19.1.0'
     defaultConfig {
@@ -18,6 +26,11 @@ android {
     }
     productFlavors {
     }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
 }
 
 dependencies {
@@ -26,4 +39,5 @@ dependencies {
     compile files('libs/volley.jar')
     compile 'com.android.support:appcompat-v7:19.+'
     compile 'com.android.support:support-v4:19.+'
+    compile files('libs/baidumapapi_v3_1_0.jar')
 }
