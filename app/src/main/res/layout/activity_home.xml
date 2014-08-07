@@ -1,0 +1,32 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              tools:context="${relativePackage}.${activityClass}">
+
+    <com.health.gooddoctor.widget.SearchBar
+            android:id="@+id/home_search_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <fragment
+                android:id="@+id/home_home_fragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:name="com.health.gooddoctor.ui.home.HomeFragment"
+                tools:layout="@layout/fragment_home"/>
+
+        <fragment
+                android:id="@+id/home_search_fragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:name="com.health.gooddoctor.ui.home.SearchHistoryFragment"
+                tools:layout="@layout/fragment_search_history"/>
+    </FrameLayout>
+
+</LinearLayout>
