@@ -1,4 +1,4 @@
-package com.health.gooddoctor.widget;
+package com.gooddoctor.widget;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -11,7 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 
-import com.health.gooddoctor.R;
+import com.gooddoctor.R;
 
 public class SearchBar extends FrameLayout {
 

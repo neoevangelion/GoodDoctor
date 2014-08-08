@@ -1,4 +1,4 @@
-package com.health.gooddoctor.widget;
+package com.gooddoctor.widget;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -8,16 +8,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.FrameLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.health.gooddoctor.R;
+import com.gooddoctor.R;
 
 public class TitleBar extends FrameLayout {
 
     private TextView mTitleTextView;
     private Button mBackButton;
-    private RelativeLayout mContainerLayout;
     private String mTitleStr;
 
     public TitleBar(Context context) {
@@ -26,7 +24,7 @@ public class TitleBar extends FrameLayout {
     }
 
     public TitleBar(Context context, AttributeSet attrs) {
-        super(context, attrs);
+        this(context, attrs, 0);
         initView(context);
     }
 
@@ -72,7 +70,7 @@ public class TitleBar extends FrameLayout {
 
     private void initView(Context context) {
         LayoutInflater inflater = LayoutInflater.from(context);
-        mContainerLayout = (RelativeLayout)inflater.inflate(R.layout.widget_title_bar, this);
+        inflater.inflate(R.layout.widget_title_bar, this);
 
         mTitleTextView = (TextView)findViewById(R.id.title_bar_text_view);
 

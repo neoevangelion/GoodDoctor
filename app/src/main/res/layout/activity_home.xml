@@ -5,7 +5,7 @@
               android:orientation="vertical"
               tools:context="${relativePackage}.${activityClass}">
 
-    <com.health.gooddoctor.widget.SearchBar
+    <com.gooddoctor.widget.SearchBar
             android:id="@+id/home_search_bar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
@@ -18,14 +18,14 @@
                 android:id="@+id/home_home_fragment"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:name="com.health.gooddoctor.ui.home.HomeFragment"
+                android:name="com.gooddoctor.ui.home.HomeFragment"
                 tools:layout="@layout/fragment_home"/>
 
         <fragment
                 android:id="@+id/home_search_fragment"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:name="com.health.gooddoctor.ui.home.SearchHistoryFragment"
+                android:name="com.gooddoctor.ui.home.SearchHistoryFragment"
                 tools:layout="@layout/fragment_search_history"/>
     </FrameLayout>
 

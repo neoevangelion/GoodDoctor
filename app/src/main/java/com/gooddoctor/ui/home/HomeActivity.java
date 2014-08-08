@@ -1,4 +1,4 @@
-package com.health.gooddoctor.ui.home;
+package com.gooddoctor.ui.home;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -7,8 +7,8 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 
-import com.health.gooddoctor.R;
-import com.health.gooddoctor.widget.SearchBar;
+import com.gooddoctor.R;
+import com.gooddoctor.widget.SearchBar;
 
 public class HomeActivity extends FragmentActivity {
 
