@@ -1,4 +1,4 @@
-package com.gooddoctor.widget;
+package com.gooddoctor.ui.widget;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;

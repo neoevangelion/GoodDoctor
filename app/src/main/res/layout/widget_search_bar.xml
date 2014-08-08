@@ -26,5 +26,10 @@
     <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/search_bar_button"/>
+            android:id="@+id/search_bar_search_button"/>
+
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/search_bar_cancel_button"/>
 </LinearLayout>

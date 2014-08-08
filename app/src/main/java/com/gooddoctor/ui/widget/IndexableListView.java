@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.gooddoctor.widget;
+package com.gooddoctor.ui.widget;
 
 
 import android.content.Context;

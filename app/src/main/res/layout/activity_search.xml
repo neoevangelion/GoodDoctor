@@ -1,0 +1,32 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              tools:context="${relativePackage}.${activityClass}">
+    <com.gooddoctor.ui.widget.TitleBar
+            android:id="@+id/search_result_title_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+    </com.gooddoctor.ui.widget.TitleBar>
+
+    <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <fragment
+                android:id="@+id/search_history_fragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:name="com.gooddoctor.ui.onSearch.SearchHistoryFragment"
+                tools:layout="@layout/footer_search_history"/>
+
+        <fragment
+                android:id="@+id/search_result_fragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:name="com.gooddoctor.ui.onSearch.SearchResultFragment"
+                tools:layout="@layout/fragment_search_result"/>
+    </FrameLayout>
+
+</LinearLayout>

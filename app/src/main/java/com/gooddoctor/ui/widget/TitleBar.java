@@ -1,4 +1,4 @@
-package com.gooddoctor.widget;
+package com.gooddoctor.ui.widget;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -25,7 +25,6 @@ public class TitleBar extends FrameLayout {
 
     public TitleBar(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
-        initView(context);
     }
 
     public TitleBar(Context context, AttributeSet attrs, int defStyle) {
@@ -37,12 +36,17 @@ public class TitleBar extends FrameLayout {
             mTitleStr = typedArray.getString(R.styleable.TitleBar_titleText);
             typedArray.recycle();
         }
+        initView(context);
     }
 
     public void setBackOnClickListener(OnClickListener listener) {
         if (listener != null) {
             mBackButton.setOnClickListener(listener);
         }
+    }
+
+    public void setBackButtonVisibility(int visibility) {
+        mBackButton.setVisibility(visibility);
     }
 
     public void setRightView(View view) {

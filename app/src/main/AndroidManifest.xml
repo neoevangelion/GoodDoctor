@@ -37,7 +37,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.search.SearchResultActivity">
+            android:name=".ui.onSearch.SearchActivity">
         </activity>
     </application>
 

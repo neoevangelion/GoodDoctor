@@ -8,6 +8,18 @@
         revision="19.1.0"
         sha1="1d779cb2b32a8a3171479f385e2f0b3996d8c416"/>
     <item
+        dex="/Users/eWalk_iOS/Documents/workspace/Android/GoodDoctor/app/build/intermediates/pre-dexed/debug/greendao-1.3.7-f3fc9928acefc8a9935895940061cbd0843ef0b0.jar"
+        jar="/Users/eWalk_iOS/.gradle/caches/modules-2/files-2.1/de.greenrobot/greendao/1.3.7/dda08161d004c4df96938da6909f1c2b96cd33c8/greendao-1.3.7.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="dda08161d004c4df96938da6909f1c2b96cd33c8"/>
+    <item
+        dex="/Users/eWalk_iOS/Documents/workspace/Android/GoodDoctor/app/build/intermediates/pre-dexed/debug/eventbus-2.2.0-f8fed0cf97990f86f4fd9f405b856c7a81aa54c5.jar"
+        jar="/Users/eWalk_iOS/Documents/workspace/Android/GoodDoctor/app/libs/eventbus-2.2.0.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="8957e80562a7e6ac5d9421e46e0898336c06c307"/>
+    <item
         dex="/Users/eWalk_iOS/Documents/workspace/Android/GoodDoctor/app/build/intermediates/pre-dexed/debug/baidumapapi_v3_1_0-68d5e90b2d631cdd5d7dc5c2e2483b931e6c37e5.jar"
         jar="/Users/eWalk_iOS/Documents/workspace/Android/GoodDoctor/app/libs/baidumapapi_v3_1_0.jar"
         jumboMode="false"
@@ -19,12 +31,6 @@
         jumboMode="false"
         revision="19.1.0"
         sha1="85f201b380937e61a9dce6ca90ccf6872abbfb67"/>
-    <item
-        dex="/Users/eWalk_iOS/Documents/workspace/Android/GoodDoctor/app/build/intermediates/pre-dexed/debug/eventbus-2.2.0-f8fed0cf97990f86f4fd9f405b856c7a81aa54c5.jar"
-        jar="/Users/eWalk_iOS/Documents/workspace/Android/GoodDoctor/app/libs/eventbus-2.2.0.jar"
-        jumboMode="false"
-        revision="19.1.0"
-        sha1="8957e80562a7e6ac5d9421e46e0898336c06c307"/>
     <item
         dex="/Users/eWalk_iOS/Documents/workspace/Android/GoodDoctor/app/build/intermediates/pre-dexed/debug/classes-2ff62f978681e6363c022817fba8770cec180ca7.jar"
         jar="/Users/eWalk_iOS/Documents/workspace/Android/GoodDoctor/build/intermediates/exploded-aar/com.android.support/appcompat-v7/19.1.0/classes.jar"

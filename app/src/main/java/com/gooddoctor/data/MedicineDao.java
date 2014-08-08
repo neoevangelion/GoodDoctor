@@ -24,14 +24,15 @@ public class MedicineDao extends AbstractDao<Medicine, Long> {
     */
     public static class Properties {
         public final static Property Id = new Property(0, Long.class, "id", true, "_id");
-        public final static Property Name = new Property(1, String.class, "name", false, "NAME");
-        public final static Property CommonName = new Property(2, String.class, "commonName", false, "COMMON_NAME");
-        public final static Property Efficacy = new Property(3, String.class, "efficacy", false, "EFFICACY");
-        public final static Property ImageUrl = new Property(4, String.class, "imageUrl", false, "IMAGE_URL");
-        public final static Property CompanyName = new Property(5, String.class, "companyName", false, "COMPANY_NAME");
-        public final static Property Price = new Property(6, Long.class, "price", false, "PRICE");
-        public final static Property Type = new Property(7, Integer.class, "type", false, "TYPE");
-        public final static Property Attribute = new Property(8, Integer.class, "attribute", false, "ATTRIBUTE");
+        public final static Property MedicineId = new Property(1, String.class, "medicineId", false, "MEDICINE_ID");
+        public final static Property Name = new Property(2, String.class, "name", false, "NAME");
+        public final static Property CommonName = new Property(3, String.class, "commonName", false, "COMMON_NAME");
+        public final static Property Efficacy = new Property(4, String.class, "efficacy", false, "EFFICACY");
+        public final static Property ImageUrl = new Property(5, String.class, "imageUrl", false, "IMAGE_URL");
+        public final static Property CompanyName = new Property(6, String.class, "companyName", false, "COMPANY_NAME");
+        public final static Property Price = new Property(7, String.class, "price", false, "PRICE");
+        public final static Property Type = new Property(8, Integer.class, "type", false, "TYPE");
+        public final static Property Attribute = new Property(9, Integer.class, "attribute", false, "ATTRIBUTE");
     };
 
 
@@ -47,15 +48,16 @@ public class MedicineDao extends AbstractDao<Medicine, Long> {
     public static void createTable(SQLiteDatabase db, boolean ifNotExists) {
         String constraint = ifNotExists? "IF NOT EXISTS ": "";
         db.execSQL("CREATE TABLE " + constraint + "'MEDICINE' (" + //
-                "'_id' INTEGER PRIMARY KEY ," + // 0: id
-                "'NAME' TEXT," + // 1: name
-                "'COMMON_NAME' TEXT," + // 2: commonName
-                "'EFFICACY' TEXT," + // 3: efficacy
-                "'IMAGE_URL' TEXT," + // 4: imageUrl
-                "'COMPANY_NAME' TEXT," + // 5: companyName
-                "'PRICE' INTEGER," + // 6: price
-                "'TYPE' INTEGER," + // 7: type
-                "'ATTRIBUTE' INTEGER);"); // 8: attribute
+                "'_id' INTEGER PRIMARY KEY AUTOINCREMENT ," + // 0: id
+                "'MEDICINE_ID' TEXT," + // 1: medicineId
+                "'NAME' TEXT," + // 2: name
+                "'COMMON_NAME' TEXT," + // 3: commonName
+                "'EFFICACY' TEXT," + // 4: efficacy
+                "'IMAGE_URL' TEXT," + // 5: imageUrl
+                "'COMPANY_NAME' TEXT," + // 6: companyName
+                "'PRICE' TEXT," + // 7: price
+                "'TYPE' INTEGER," + // 8: type
+                "'ATTRIBUTE' INTEGER);"); // 9: attribute
     }
 
     /** Drops the underlying database table. */
@@ -74,44 +76,49 @@ public class MedicineDao extends AbstractDao<Medicine, Long> {
             stmt.bindLong(1, id);
         }
  
+        String medicineId = entity.getMedicineId();
+        if (medicineId != null) {
+            stmt.bindString(2, medicineId);
+        }
+ 
         String name = entity.getName();
         if (name != null) {
-            stmt.bindString(2, name);
+            stmt.bindString(3, name);
         }
  
         String commonName = entity.getCommonName();
         if (commonName != null) {
-            stmt.bindString(3, commonName);
+            stmt.bindString(4, commonName);
         }
  
         String efficacy = entity.getEfficacy();
         if (efficacy != null) {
-            stmt.bindString(4, efficacy);
+            stmt.bindString(5, efficacy);
         }
  
         String imageUrl = entity.getImageUrl();
         if (imageUrl != null) {
-            stmt.bindString(5, imageUrl);
+            stmt.bindString(6, imageUrl);
         }
  
         String companyName = entity.getCompanyName();
         if (companyName != null) {
-            stmt.bindString(6, companyName);
+            stmt.bindString(7, companyName);
         }
  
-        Long price = entity.getPrice();
+        String price = entity.getPrice();
         if (price != null) {
-            stmt.bindLong(7, price);
+            stmt.bindString(8, price);
         }
  
         Integer type = entity.getType();
         if (type != null) {
-            stmt.bindLong(8, type);
+            stmt.bindLong(9, type);
         }
  
         Integer attribute = entity.getAttribute();
         if (attribute != null) {
-            stmt.bindLong(9, attribute);
+            stmt.bindLong(10, attribute);
         }
     }
 
@@ -126,14 +133,15 @@ public class MedicineDao extends AbstractDao<Medicine, Long> {
     public Medicine readEntity(Cursor cursor, int offset) {
         Medicine entity = new Medicine( //
             cursor.isNull(offset + 0) ? null : cursor.getLong(offset + 0), // id
-            cursor.isNull(offset + 1) ? null : cursor.getString(offset + 1), // name
-            cursor.isNull(offset + 2) ? null : cursor.getString(offset + 2), // commonName
-            cursor.isNull(offset + 3) ? null : cursor.getString(offset + 3), // efficacy
-            cursor.isNull(offset + 4) ? null : cursor.getString(offset + 4), // imageUrl
-            cursor.isNull(offset + 5) ? null : cursor.getString(offset + 5), // companyName
-            cursor.isNull(offset + 6) ? null : cursor.getLong(offset + 6), // price
-            cursor.isNull(offset + 7) ? null : cursor.getInt(offset + 7), // type
-            cursor.isNull(offset + 8) ? null : cursor.getInt(offset + 8) // attribute
+            cursor.isNull(offset + 1) ? null : cursor.getString(offset + 1), // medicineId
+            cursor.isNull(offset + 2) ? null : cursor.getString(offset + 2), // name
+            cursor.isNull(offset + 3) ? null : cursor.getString(offset + 3), // commonName
+            cursor.isNull(offset + 4) ? null : cursor.getString(offset + 4), // efficacy
+            cursor.isNull(offset + 5) ? null : cursor.getString(offset + 5), // imageUrl
+            cursor.isNull(offset + 6) ? null : cursor.getString(offset + 6), // companyName
+            cursor.isNull(offset + 7) ? null : cursor.getString(offset + 7), // price
+            cursor.isNull(offset + 8) ? null : cursor.getInt(offset + 8), // type
+            cursor.isNull(offset + 9) ? null : cursor.getInt(offset + 9) // attribute
         );
         return entity;
     }
@@ -142,14 +150,15 @@ public class MedicineDao extends AbstractDao<Medicine, Long> {
     @Override
     public void readEntity(Cursor cursor, Medicine entity, int offset) {
         entity.setId(cursor.isNull(offset + 0) ? null : cursor.getLong(offset + 0));
-        entity.setName(cursor.isNull(offset + 1) ? null : cursor.getString(offset + 1));
-        entity.setCommonName(cursor.isNull(offset + 2) ? null : cursor.getString(offset + 2));
-        entity.setEfficacy(cursor.isNull(offset + 3) ? null : cursor.getString(offset + 3));
-        entity.setImageUrl(cursor.isNull(offset + 4) ? null : cursor.getString(offset + 4));
-        entity.setCompanyName(cursor.isNull(offset + 5) ? null : cursor.getString(offset + 5));
-        entity.setPrice(cursor.isNull(offset + 6) ? null : cursor.getLong(offset + 6));
-        entity.setType(cursor.isNull(offset + 7) ? null : cursor.getInt(offset + 7));
-        entity.setAttribute(cursor.isNull(offset + 8) ? null : cursor.getInt(offset + 8));
+        entity.setMedicineId(cursor.isNull(offset + 1) ? null : cursor.getString(offset + 1));
+        entity.setName(cursor.isNull(offset + 2) ? null : cursor.getString(offset + 2));
+        entity.setCommonName(cursor.isNull(offset + 3) ? null : cursor.getString(offset + 3));
+        entity.setEfficacy(cursor.isNull(offset + 4) ? null : cursor.getString(offset + 4));
+        entity.setImageUrl(cursor.isNull(offset + 5) ? null : cursor.getString(offset + 5));
+        entity.setCompanyName(cursor.isNull(offset + 6) ? null : cursor.getString(offset + 6));
+        entity.setPrice(cursor.isNull(offset + 7) ? null : cursor.getString(offset + 7));
+        entity.setType(cursor.isNull(offset + 8) ? null : cursor.getInt(offset + 8));
+        entity.setAttribute(cursor.isNull(offset + 9) ? null : cursor.getInt(offset + 9));
      }
     
     /** @inheritdoc */

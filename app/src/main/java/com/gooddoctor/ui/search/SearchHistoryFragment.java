@@ -1,4 +1,4 @@
-package com.gooddoctor.ui.home;
+package com.gooddoctor.ui.search;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;

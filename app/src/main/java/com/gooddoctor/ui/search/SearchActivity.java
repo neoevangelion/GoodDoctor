@@ -1,0 +1,75 @@
+package com.gooddoctor.ui.search;
+
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
+import android.os.Bundle;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
+import android.view.View;
+
+import com.gooddoctor.R;
+import com.gooddoctor.engine.search.SearchEngine;
+import com.gooddoctor.engine.search.SearchResult;
+import com.gooddoctor.engine.search.SearchResultListener;
+import com.gooddoctor.ui.widget.SearchActionHandler;
+import com.gooddoctor.ui.widget.SearchBar;
+import com.gooddoctor.ui.widget.TitleBar;
+
+public class SearchActivity extends FragmentActivity {
+
+    private static final int PAGE_SIZE  = 10;
+
+    private SearchBar mSearchBar;
+    private SearchHistoryFragment mSearchHistoryFragment;
+    private SearchResultFragment mSearchResultFragment;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_search);
+
+        TitleBar titleBar = (TitleBar)findViewById(R.id.search_result_title_bar);
+        titleBar.setBackButtonVisibility(View.GONE);
+        mSearchBar = new SearchBar(this);
+        mSearchBar.setSearchActionHandler(new SearchActionHandler() {
+            @Override
+            public void onSearch(String keyword) {
+                doSearch(keyword);
+            }
+
+            @Override
+            public void onCancel() {
+                finish();
+            }
+        });
+
+        titleBar.setCenterView(mSearchBar);
+
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        mSearchHistoryFragment = (SearchHistoryFragment)fragmentManager.findFragmentById(R.id.search_history_fragment);
+        mSearchResultFragment = (SearchResultFragment)fragmentManager.findFragmentById(R.id.search_result_fragment);
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
+        transaction.show(mSearchHistoryFragment);
+        transaction.hide(mSearchResultFragment);
+        transaction.commit();
+    }
+
+    private void doSearch(String keyword) {
+        SearchEngine engine = new SearchEngine(this);
+        engine.searchDisease(keyword, PAGE_SIZE, 0, mSearchResultListener);
+    }
+
+    private SearchResultListener mSearchResultListener = new SearchResultListener() {
+        @Override
+        public void handleSearchResult(SearchResult result) {
+            mSearchResultFragment.setSearchResult(result);
+
+            if (!mSearchResultFragment.isVisible()) {
+                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                transaction.hide(mSearchHistoryFragment);
+                transaction.show(mSearchResultFragment);
+                transaction.commit();
+            }
+        }
+    };
+}

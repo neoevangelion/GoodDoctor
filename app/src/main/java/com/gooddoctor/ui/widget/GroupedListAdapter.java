@@ -1,4 +1,4 @@
-package com.gooddoctor.widget;
+package com.gooddoctor.ui.widget;
 
 import android.view.View;
 import android.view.ViewGroup;

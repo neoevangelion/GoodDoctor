@@ -12,20 +12,22 @@ public class DaoGen {
         Schema schema = new Schema(1, "com.gooddoctor.data");
         Entity disease = schema.addEntity("Disease");
 
-        disease.addIdProperty();
+        disease.addIdProperty().autoincrement();
+        disease.addStringProperty("diseaseId");
         disease.addStringProperty("name");
         disease.addStringProperty("pinyin");
         disease.addIntProperty("productNum");
 
         Entity medicine = schema.addEntity("Medicine");
 
-        medicine.addIdProperty();
+        medicine.addIdProperty().autoincrement();
+        medicine.addStringProperty("medicineId");
         medicine.addStringProperty("name");
         medicine.addStringProperty("commonName");
         medicine.addStringProperty("efficacy");
         medicine.addStringProperty("imageUrl");
         medicine.addStringProperty("companyName");
-        medicine.addLongProperty("price");
+        medicine.addStringProperty("price");
         medicine.addIntProperty("type");
         medicine.addIntProperty("attribute");
 

@@ -24,9 +24,10 @@ public class DiseaseDao extends AbstractDao<Disease, Long> {
     */
     public static class Properties {
         public final static Property Id = new Property(0, Long.class, "id", true, "_id");
-        public final static Property Name = new Property(1, String.class, "name", false, "NAME");
-        public final static Property Pinyin = new Property(2, String.class, "pinyin", false, "PINYIN");
-        public final static Property ProductNum = new Property(3, Integer.class, "productNum", false, "PRODUCT_NUM");
+        public final static Property DiseaseId = new Property(1, String.class, "diseaseId", false, "DISEASE_ID");
+        public final static Property Name = new Property(2, String.class, "name", false, "NAME");
+        public final static Property Pinyin = new Property(3, String.class, "pinyin", false, "PINYIN");
+        public final static Property ProductNum = new Property(4, Integer.class, "productNum", false, "PRODUCT_NUM");
     };
 
 
@@ -42,10 +43,11 @@ public class DiseaseDao extends AbstractDao<Disease, Long> {
     public static void createTable(SQLiteDatabase db, boolean ifNotExists) {
         String constraint = ifNotExists? "IF NOT EXISTS ": "";
         db.execSQL("CREATE TABLE " + constraint + "'DISEASE' (" + //
-                "'_id' INTEGER PRIMARY KEY ," + // 0: id
-                "'NAME' TEXT," + // 1: name
-                "'PINYIN' TEXT," + // 2: pinyin
-                "'PRODUCT_NUM' INTEGER);"); // 3: productNum
+                "'_id' INTEGER PRIMARY KEY AUTOINCREMENT ," + // 0: id
+                "'DISEASE_ID' TEXT," + // 1: diseaseId
+                "'NAME' TEXT," + // 2: name
+                "'PINYIN' TEXT," + // 3: pinyin
+                "'PRODUCT_NUM' INTEGER);"); // 4: productNum
     }
 
     /** Drops the underlying database table. */
@@ -64,19 +66,24 @@ public class DiseaseDao extends AbstractDao<Disease, Long> {
             stmt.bindLong(1, id);
         }
  
+        String diseaseId = entity.getDiseaseId();
+        if (diseaseId != null) {
+            stmt.bindString(2, diseaseId);
+        }
+ 
         String name = entity.getName();
         if (name != null) {
-            stmt.bindString(2, name);
+            stmt.bindString(3, name);
         }
  
         String pinyin = entity.getPinyin();
         if (pinyin != null) {
-            stmt.bindString(3, pinyin);
+            stmt.bindString(4, pinyin);
         }
  
         Integer productNum = entity.getProductNum();
         if (productNum != null) {
-            stmt.bindLong(4, productNum);
+            stmt.bindLong(5, productNum);
         }
     }
 
@@ -91,9 +98,10 @@ public class DiseaseDao extends AbstractDao<Disease, Long> {
     public Disease readEntity(Cursor cursor, int offset) {
         Disease entity = new Disease( //
             cursor.isNull(offset + 0) ? null : cursor.getLong(offset + 0), // id
-            cursor.isNull(offset + 1) ? null : cursor.getString(offset + 1), // name
-            cursor.isNull(offset + 2) ? null : cursor.getString(offset + 2), // pinyin
-            cursor.isNull(offset + 3) ? null : cursor.getInt(offset + 3) // productNum
+            cursor.isNull(offset + 1) ? null : cursor.getString(offset + 1), // diseaseId
+            cursor.isNull(offset + 2) ? null : cursor.getString(offset + 2), // name
+            cursor.isNull(offset + 3) ? null : cursor.getString(offset + 3), // pinyin
+            cursor.isNull(offset + 4) ? null : cursor.getInt(offset + 4) // productNum
         );
         return entity;
     }
@@ -102,9 +110,10 @@ public class DiseaseDao extends AbstractDao<Disease, Long> {
     @Override
     public void readEntity(Cursor cursor, Disease entity, int offset) {
         entity.setId(cursor.isNull(offset + 0) ? null : cursor.getLong(offset + 0));
-        entity.setName(cursor.isNull(offset + 1) ? null : cursor.getString(offset + 1));
-        entity.setPinyin(cursor.isNull(offset + 2) ? null : cursor.getString(offset + 2));
-        entity.setProductNum(cursor.isNull(offset + 3) ? null : cursor.getInt(offset + 3));
+        entity.setDiseaseId(cursor.isNull(offset + 1) ? null : cursor.getString(offset + 1));
+        entity.setName(cursor.isNull(offset + 2) ? null : cursor.getString(offset + 2));
+        entity.setPinyin(cursor.isNull(offset + 3) ? null : cursor.getString(offset + 3));
+        entity.setProductNum(cursor.isNull(offset + 4) ? null : cursor.getInt(offset + 4));
      }
     
     /** @inheritdoc */

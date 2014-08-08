@@ -7,6 +7,7 @@ package com.gooddoctor.data;
 public class Disease {
 
     private Long id;
+    private String diseaseId;
     private String name;
     private String pinyin;
     private Integer productNum;
@@ -18,8 +19,9 @@ public class Disease {
         this.id = id;
     }
 
-    public Disease(Long id, String name, String pinyin, Integer productNum) {
+    public Disease(Long id, String diseaseId, String name, String pinyin, Integer productNum) {
         this.id = id;
+        this.diseaseId = diseaseId;
         this.name = name;
         this.pinyin = pinyin;
         this.productNum = productNum;
@@ -31,6 +33,14 @@ public class Disease {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getDiseaseId() {
+        return diseaseId;
+    }
+
+    public void setDiseaseId(String diseaseId) {
+        this.diseaseId = diseaseId;
     }
 
     public String getName() {

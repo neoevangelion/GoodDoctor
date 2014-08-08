@@ -3,12 +3,7 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:orientation="vertical"
-              tools:context="${relativePackage}.${activityClass}">
-    <com.gooddoctor.widget.TitleBar
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-    </com.gooddoctor.widget.TitleBar>
+              tools:context=".ui.onSearch.SearchResult">
 
     <RadioGroup
             android:layout_width="match_parent"
@@ -19,19 +14,25 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:id="@+id/radioButton2"/>
+                android:id="@+id/search_result_medicine_button"/>
 
         <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:id="@+id/radioButton"/>
+                android:id="@+id/search_result_query_button"/>
 
         <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:id="@+id/radioButton3"/>
+                android:id="@+id/search_result_disease_button"/>
     </RadioGroup>
 
+    <android.support.v4.view.ViewPager
+            android:id="@+id/search_result_view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+    </android.support.v4.view.ViewPager>
 </LinearLayout>

@@ -14,7 +14,7 @@
     <string name="abc_searchview_description_query" msgid="2550479030709304392">"Search query"</string>
     <string name="abc_searchview_description_search" msgid="8264924765203268293">"Search"</string>
     <string name="abc_searchview_description_submit" msgid="8928215447528550784">"Submit query"</string>
-    <string name="abc_searchview_description_voice" msgid="893419373245838918">"Voice search"</string>
+    <string name="abc_searchview_description_voice" msgid="893419373245838918">"Voice onSearch"</string>
     <string name="abc_shareactionprovider_share_with" msgid="3421042268587513524">"Share with"</string>
     <string name="abc_shareactionprovider_share_with_application" msgid="7165123711973476752">"Share with %s"</string>
 
