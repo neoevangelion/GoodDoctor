@@ -49,6 +49,18 @@ public class TitleBar extends FrameLayout {
         mBackButton.setVisibility(visibility);
     }
 
+    public void setLeftView(View view) {
+        if (view == null) {
+            return;
+        }
+
+        mBackButton.setVisibility(GONE);
+        ViewGroup container = (ViewGroup)findViewById(R.id.title_bar_layout_left);
+        ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT);
+        container.addView(view, layoutParams);
+    }
+
     public void setRightView(View view) {
         if (view == null) {
             return;

@@ -46,9 +46,11 @@ public class SearchActivity extends FragmentActivity {
         titleBar.setCenterView(mSearchBar);
 
         FragmentManager fragmentManager = getSupportFragmentManager();
-        mSearchHistoryFragment = (SearchHistoryFragment)fragmentManager.findFragmentById(R.id.search_history_fragment);
-        mSearchResultFragment = (SearchResultFragment)fragmentManager.findFragmentById(R.id.search_result_fragment);
+        mSearchHistoryFragment = new SearchHistoryFragment();
+        mSearchResultFragment = new SearchResultFragment();
         FragmentTransaction transaction = fragmentManager.beginTransaction();
+        transaction.add(R.id.search_fragment_layout, mSearchHistoryFragment);
+        transaction.add(R.id.search_fragment_layout, mSearchResultFragment);
         transaction.show(mSearchHistoryFragment);
         transaction.hide(mSearchResultFragment);
         transaction.commit();
@@ -62,7 +64,7 @@ public class SearchActivity extends FragmentActivity {
     private SearchResultListener mSearchResultListener = new SearchResultListener() {
         @Override
         public void handleSearchResult(SearchResult result) {
-            mSearchResultFragment.setSearchResult(result);
+            mSearchResultFragment.updateSearchResult(result);
 
             if (!mSearchResultFragment.isVisible()) {
                 FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();

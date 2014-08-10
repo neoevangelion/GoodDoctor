@@ -6,15 +6,15 @@
     tools:context="${relativePackage}.${activityClass}">
 
     <com.gooddoctor.ui.widget.TitleBar
-        android:id="@+id/search_result_title_bar"
+        android:id="@+id/family_title_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
     </com.gooddoctor.ui.widget.TitleBar>
 
-    <FrameLayout
-        android:id="@+id/search_fragment_layout"
+    <ListView
+        android:id="@+id/family_list_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"></ListView>
 
 </LinearLayout>

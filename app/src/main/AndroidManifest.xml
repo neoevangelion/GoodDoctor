@@ -36,9 +36,44 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".ui.onSearch.SearchActivity">
+        <activity android:name=".ui.search.SearchActivity" >
         </activity>
+        <activity android:name=".ui.family.FamilyMedicineActivity" >
+        </activity>
+        <activity android:name=".ui.family.PersonMedicineActivity" >
+        </activity>
+        <activity android:name=".ui.family.FamilyPersonEditActivity" >
+            <intent-filter>
+                <action android:name="com.gooddoctor.family.INSERT" />
+                <action android:name="com.gooddoctor.family.EDIT" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ui.notification.NotificationListActivity" >
+        </activity>
+        <activity android:name=".ui.notification.EditNotificationActivity" >
+            <intent-filter>
+                <action android:name="com.gooddoctor.notification.INSERT" />
+                <action android:name="com.gooddoctor.notification.EDIT" />
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.medicine.MedicineCategoryListActivity"
+            android:label="@string/title_activity_medicine_catagory_list" >
+        </activity>
+
+        <receiver
+            android:name=".engine.notification.MedicineNotificationReceiver"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="com.gooddoctor.notification.TIME_OUT"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

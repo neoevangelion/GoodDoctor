@@ -11,7 +11,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.gooddoctor.R;
+import com.gooddoctor.engine.search.SearchMedicineResult;
 import com.gooddoctor.engine.search.SearchResult;
+import com.gooddoctor.ui.medicine.MedicineListFragment;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -20,15 +22,28 @@ import com.gooddoctor.engine.search.SearchResult;
 public class SearchResultFragment extends Fragment {
 
     private ViewPager mViewPager;
+    private MedicineListFragment mMedicineFragment;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_search_result, container, false);
         if (view != null) {
+            mMedicineFragment = new MedicineListFragment();
+
             mViewPager = (ViewPager)view.findViewById(R.id.search_result_view_pager);
             mViewPager.setAdapter(new FragmentPagerAdapter(getChildFragmentManager()) {
                 @Override
                 public Fragment getItem(int position) {
+                    switch (position) {
+                        case 0:
+                            return mMedicineFragment;
+                        case 1:
+                            return mMedicineFragment;
+                        case 2:
+                            return mMedicineFragment;
+                        default:
+                            break;
+                    }
                     return null;
                 }
 
@@ -41,7 +56,9 @@ public class SearchResultFragment extends Fragment {
         return view;
     }
 
-    public void setSearchResult(SearchResult result) {
-
+    public void updateSearchResult(SearchResult result) {
+        if (result != null && result instanceof SearchMedicineResult) {
+            mMedicineFragment.updateSearchResult((SearchMedicineResult)result);
+        }
     }
 }

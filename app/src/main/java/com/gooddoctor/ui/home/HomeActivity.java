@@ -18,7 +18,13 @@ public class HomeActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        final SearchBar searchBar = (SearchBar)findViewById(R.id.home_search_bar);
+        HomeFragment fragment = new HomeFragment();
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.add(R.id.home_fragment_layout, fragment);
+        transaction.show(fragment);
+        transaction.commit();
+
+        final SearchBar searchBar = (SearchBar) findViewById(R.id.home_search_bar);
         searchBar.setInterceptMode(true);
         searchBar.setSearchButtonVisibility(View.GONE);
         searchBar.setOnInterceptClickListener(new View.OnClickListener() {

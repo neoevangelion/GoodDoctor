@@ -5,18 +5,22 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
-    <Button
+    <FrameLayout
+        android:id="@+id/title_bar_layout_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true">
+        <Button
             android:id="@+id/title_bar_back_button"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_alignParentLeft="true"/>
+            android:layout_height="wrap_content"/>
+    </FrameLayout>
 
     <FrameLayout
             android:id="@+id/title_bar_layout_center"
             android:layout_toLeftOf="@+id/title_bar_layout_right"
-            android:layout_toRightOf="@+id/title_bar_back_button"
+            android:layout_toRightOf="@+id/title_bar_layout_left"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true">
