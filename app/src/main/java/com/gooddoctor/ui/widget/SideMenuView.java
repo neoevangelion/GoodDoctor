@@ -65,21 +65,22 @@ public class SideMenuView extends FrameLayout {
             int childWidth = mDetailView.getMeasuredWidth();
             int childLeft = 0;
             if (!mIsCollapsed) {
-                childLeft = r;
+                childLeft = getMeasuredWidth();
             } else {
-                childLeft = r - childWidth;
+                childLeft = getMeasuredWidth() - childWidth;
             }
-            mDetailView.layout(childLeft, t, childLeft + childWidth, b);
+            mDetailView.layout(childLeft, 0, childLeft + childWidth, mDetailView.getMeasuredHeight());
         }
     }
 
-    public void ExpandMenu() {
+    public void expandMenu() {
         if (mMenuView == null || mDetailView == null || !mIsCollapsed) {
             return;
         }
 
-        TranslateAnimation animation = new TranslateAnimation(0, 0, mDetailView.getWidth(), 0);
+        TranslateAnimation animation = new TranslateAnimation(0, mDetailView.getWidth(), 0, 0);
         animation.setDuration(500);
+        animation.setFillAfter(true);
         animation.setAnimationListener(mAnimationListener);
         mDetailView.setAnimation(animation);
         animation.start();
@@ -89,14 +90,15 @@ public class SideMenuView extends FrameLayout {
         mIsCollapsed = false;
     }
 
-    public void CollapseMenu() {
+    public void collapseMenu() {
         if (mMenuView == null || mDetailView == null || mIsCollapsed) {
             return;
         }
 
-        TranslateAnimation animation = new TranslateAnimation(0, 0, -1 * mDetailView.getWidth(), 0);
+        TranslateAnimation animation = new TranslateAnimation(0, -1 * mDetailView.getWidth(), 0, 0);
         animation.setDuration(500);
         animation.setAnimationListener(mAnimationListener);
+        animation.setFillAfter(true);
         mDetailView.setAnimation(animation);
         animation.start();
 
@@ -114,6 +116,7 @@ public class SideMenuView extends FrameLayout {
         @Override
         public void onAnimationEnd(Animation animation) {
             requestLayout();
+            mDetailView.clearAnimation();
         }
 
         @Override

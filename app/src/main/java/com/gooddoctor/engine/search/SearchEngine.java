@@ -53,5 +53,6 @@ public class SearchEngine {
         });
 
         mRequestQueue.add(request);
+        mRequestQueue.start();
     }
 }

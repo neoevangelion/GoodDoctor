@@ -9,6 +9,7 @@ public class Notification {
     private Long id;
     private String personName;
     private String medicineId;
+    private String medicineName;
     private java.util.Date startDate;
     private Integer repeatCount;
     private Boolean notificationEnabled;
@@ -20,10 +21,11 @@ public class Notification {
         this.id = id;
     }
 
-    public Notification(Long id, String personName, String medicineId, java.util.Date startDate, Integer repeatCount, Boolean notificationEnabled) {
+    public Notification(Long id, String personName, String medicineId, String medicineName, java.util.Date startDate, Integer repeatCount, Boolean notificationEnabled) {
         this.id = id;
         this.personName = personName;
         this.medicineId = medicineId;
+        this.medicineName = medicineName;
         this.startDate = startDate;
         this.repeatCount = repeatCount;
         this.notificationEnabled = notificationEnabled;
@@ -51,6 +53,14 @@ public class Notification {
 
     public void setMedicineId(String medicineId) {
         this.medicineId = medicineId;
+    }
+
+    public String getMedicineName() {
+        return medicineName;
+    }
+
+    public void setMedicineName(String medicineName) {
+        this.medicineName = medicineName;
     }
 
     public java.util.Date getStartDate() {

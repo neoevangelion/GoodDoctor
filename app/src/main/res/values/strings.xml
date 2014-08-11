@@ -2,7 +2,10 @@
 <resources>
 
     <string name="app_name">GoodDoctor</string>
-    <string name="title_activity_medicine_catagory_list">MedicineCatagoryListActivity</string>
+
+    <!-- Disease Activity -->
+    <string name="disease_activity_split">,</string>
+    <string name="title_activity_disease_detail">DiseaseDetailActivity</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
 

@@ -1,19 +1,20 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="${relativePackage}.${activityClass}">
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              tools:context="${relativePackage}.${activityClass}">
 
     <com.gooddoctor.ui.widget.TitleBar
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
     </com.gooddoctor.ui.widget.TitleBar>
 
     <com.gooddoctor.ui.widget.SideMenuView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+            android:id="@+id/medicine_category_side_menu_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
     </com.gooddoctor.ui.widget.SideMenuView>
 </LinearLayout>

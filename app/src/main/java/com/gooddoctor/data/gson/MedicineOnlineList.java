@@ -1,6 +1,5 @@
 package com.gooddoctor.data.gson;
 
-import com.gooddoctor.data.dao.Medicine;
 import com.gooddoctor.engine.constant.ProtocolConst;
 
 import org.json.JSONArray;

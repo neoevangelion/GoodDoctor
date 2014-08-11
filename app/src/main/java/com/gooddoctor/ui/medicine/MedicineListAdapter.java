@@ -9,7 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.gooddoctor.R;
-import com.gooddoctor.data.dao.Medicine;
+import com.gooddoctor.data.gson.Medicine;
 
 import java.util.List;
 
@@ -47,21 +47,20 @@ public class MedicineListAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         if (convertView == null) {
-            convertView = LayoutInflater.from(mContext).inflate(R.layout.list_item_medicine, parent, false);
-            TextView titleText = (TextView) convertView.findViewById(R.id.medicine_list_item_title_text_view);
-            TextView priceText = (TextView) convertView.findViewById(R.id.medicine_list_item_price_text_view);
-            TextView companyText = (TextView) convertView.findViewById(R.id.medicine_list_item_company_text_view);
-            TextView descriptionText = (TextView) convertView.findViewById(R.id.medicine_list_item_description_text_view);
-            TextView sellersText = (TextView) convertView.findViewById(R.id.medicine_list_item_sellers_text_view);
-            ImageView otcImage = (ImageView) convertView.findViewById(R.id.medicine_list_item_otc_image);
-            ImageView nonOtcImage = (ImageView) convertView.findViewById(R.id.medicine_list_item_non_otc_image);
-
             ViewHolder viewHolder = new ViewHolder();
-            viewHolder.mTitleView = titleText;
-            viewHolder.mCompanyView = companyText;
+
+            convertView = LayoutInflater.from(mContext).inflate(R.layout.list_item_medicine, parent, false);
+            viewHolder.mTitleView = (TextView) convertView.findViewById(R.id.medicine_list_item_title_text_view);
+            viewHolder.mPriceView = (TextView) convertView.findViewById(R.id.medicine_list_item_price_text_view);
+            viewHolder.mCompanyView = (TextView) convertView.findViewById(R.id.medicine_list_item_company_text_view);
+            viewHolder.mDescriptionView = (TextView) convertView.findViewById(R.id.medicine_list_item_description_text_view);
+            viewHolder.mSellerView = (TextView) convertView.findViewById(R.id.medicine_list_item_sellers_text_view);
+            viewHolder.mOtcImage = (ImageView) convertView.findViewById(R.id.medicine_list_item_otc_image);
+            viewHolder.mNonOtcImage = (ImageView) convertView.findViewById(R.id.medicine_list_item_non_otc_image);
+
+            convertView.setTag(viewHolder);
         }
 
-        Medicine medicine = (Medicine) getItem(position);
         return convertView;
     }
 
