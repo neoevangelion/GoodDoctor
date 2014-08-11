@@ -11,5 +11,9 @@
 
     </com.gooddoctor.ui.widget.TitleBar>
 
+    <com.gooddoctor.ui.widget.SideMenuView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
+    </com.gooddoctor.ui.widget.SideMenuView>
 </LinearLayout>

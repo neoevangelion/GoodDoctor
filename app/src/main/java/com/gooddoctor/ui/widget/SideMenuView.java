@@ -10,30 +10,38 @@ import android.widget.FrameLayout;
 /**
  * Created by Administrator on 2014/8/9.
  */
-public class DockMenu extends FrameLayout {
+public class SideMenuView extends FrameLayout {
     private boolean mIsCollapsed = false;
     private View mDetailView;
     private CollapsibleMenu mMenuView;
 
-    public DockMenu(Context context) {
+    public SideMenuView(Context context) {
         super(context);
     }
 
-    public DockMenu(Context context, AttributeSet attrs) {
+    public SideMenuView(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 
-    public DockMenu(Context context, AttributeSet attrs, int defStyle) {
+    public SideMenuView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
     }
 
-    public void setMenuView(CollapsibleMenu view) {
+    public void setMenuView(View view) {
+        if (view == null || !(view instanceof CollapsibleMenu)) {
+            return;
+        }
+
         LayoutParams layoutParams = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
         addView(view, layoutParams);
-        mMenuView = view;
+        mMenuView = (CollapsibleMenu)view;
     }
 
     public void setDetailView(View view) {
+        if (view == null) {
+            return;
+        }
+
         LayoutParams layoutParams = new LayoutParams(0, LayoutParams.MATCH_PARENT);
         addView(view, layoutParams);
         mDetailView = view;
@@ -42,27 +50,31 @@ public class DockMenu extends FrameLayout {
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-        int width = MeasureSpec.getSize(widthMeasureSpec);
-        int detailViewMeasureSpec = MeasureSpec.makeMeasureSpec((int)(width * 0.65), MeasureSpec.EXACTLY);
-        mDetailView.measure(detailViewMeasureSpec, heightMeasureSpec);
+        if (mDetailView != null) {
+            int width = MeasureSpec.getSize(widthMeasureSpec);
+            int detailViewMeasureSpec = MeasureSpec.makeMeasureSpec((int) (width * 0.65), MeasureSpec.EXACTLY);
+            mDetailView.measure(detailViewMeasureSpec, heightMeasureSpec);
+        }
     }
 
     @Override
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
         super.onLayout(changed, l, t, r, b);
 
-        int childWidth = mDetailView.getMeasuredWidth();
-        int childLeft = 0;
-        if (!mIsCollapsed) {
-            childLeft = r;
-        } else {
-            childLeft = r - childWidth;
+        if (mDetailView != null) {
+            int childWidth = mDetailView.getMeasuredWidth();
+            int childLeft = 0;
+            if (!mIsCollapsed) {
+                childLeft = r;
+            } else {
+                childLeft = r - childWidth;
+            }
+            mDetailView.layout(childLeft, t, childLeft + childWidth, b);
         }
-        mDetailView.layout(childLeft, t, childLeft + childWidth, b);
     }
 
     public void ExpandMenu() {
-        if (!mIsCollapsed) {
+        if (mMenuView == null || mDetailView == null || !mIsCollapsed) {
             return;
         }
 
@@ -78,7 +90,7 @@ public class DockMenu extends FrameLayout {
     }
 
     public void CollapseMenu() {
-        if (mIsCollapsed) {
+        if (mMenuView == null || mDetailView == null || mIsCollapsed) {
             return;
         }
 

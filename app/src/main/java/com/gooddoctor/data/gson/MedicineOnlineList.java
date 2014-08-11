@@ -1,5 +1,6 @@
-package com.gooddoctor.data;
+package com.gooddoctor.data.gson;
 
+import com.gooddoctor.data.dao.Medicine;
 import com.gooddoctor.engine.constant.ProtocolConst;
 
 import org.json.JSONArray;
@@ -12,11 +13,11 @@ import java.util.List;
 /**
  * Created by eWalk_iOS on 14-8-8.
  */
-public class MedicineList {
+public class MedicineOnlineList {
     private int mPages;
     private List<Medicine> mMedicines;
 
-    public MedicineList() {
+    public MedicineOnlineList() {
         mMedicines = new ArrayList<Medicine>();
     }
 
@@ -36,9 +37,9 @@ public class MedicineList {
         this.mMedicines = mMedicines;
     }
 
-    public static MedicineList fromJson(JSONObject json) {
+    public static MedicineOnlineList fromJson(JSONObject json) {
         try {
-            MedicineList list = new MedicineList();
+            MedicineOnlineList list = new MedicineOnlineList();
 
             list.mPages = json.getInt(ProtocolConst.MEDICINE_PAGES);
             JSONArray array = json.getJSONArray(ProtocolConst.MEDICINE_LIST);

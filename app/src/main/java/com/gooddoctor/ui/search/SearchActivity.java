@@ -1,6 +1,5 @@
 package com.gooddoctor.ui.search;
 
-import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
@@ -11,7 +10,7 @@ import com.gooddoctor.R;
 import com.gooddoctor.engine.search.SearchEngine;
 import com.gooddoctor.engine.search.SearchResult;
 import com.gooddoctor.engine.search.SearchResultListener;
-import com.gooddoctor.ui.widget.SearchActionHandler;
+import com.gooddoctor.ui.widget.SearchBarActionHandler;
 import com.gooddoctor.ui.widget.SearchBar;
 import com.gooddoctor.ui.widget.TitleBar;
 
@@ -31,7 +30,7 @@ public class SearchActivity extends FragmentActivity {
         TitleBar titleBar = (TitleBar)findViewById(R.id.search_result_title_bar);
         titleBar.setBackButtonVisibility(View.GONE);
         mSearchBar = new SearchBar(this);
-        mSearchBar.setSearchActionHandler(new SearchActionHandler() {
+        mSearchBar.setSearchActionHandler(new SearchBarActionHandler() {
             @Override
             public void onSearch(String keyword) {
                 doSearch(keyword);

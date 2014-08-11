@@ -1,18 +1,18 @@
 package com.gooddoctor.engine.search;
 
-import com.gooddoctor.data.MedicineList;
+import com.gooddoctor.data.gson.MedicineOnlineList;
 
 /**
  * Created by eWalk_iOS on 14-8-8.
  */
 public class SearchMedicineResult extends SearchResult {
-    private MedicineList mMedicines;
+    private MedicineOnlineList mMedicines;
 
-    public MedicineList getMedicines() {
+    public MedicineOnlineList getMedicines() {
         return mMedicines;
     }
 
-    public void setMedicines(MedicineList mMedicines) {
+    public void setMedicines(MedicineOnlineList mMedicines) {
         this.mMedicines = mMedicines;
     }
 }

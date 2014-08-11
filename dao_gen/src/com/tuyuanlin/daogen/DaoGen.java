@@ -9,7 +9,7 @@ import de.greenrobot.daogenerator.DaoGenerator;
  */
 public class DaoGen {
     public static void main(String[] args) throws Exception {
-        Schema schema = new Schema(1, "com.gooddoctor.data");
+        Schema schema = new Schema(1, "com.gooddoctor.data.dao");
         Entity disease = schema.addEntity("Disease");
 
         disease.addIdProperty().autoincrement();
@@ -18,18 +18,21 @@ public class DaoGen {
         disease.addStringProperty("pinyin");
         disease.addIntProperty("productNum");
 
-        Entity medicine = schema.addEntity("Medicine");
+        Entity medicineBox = schema.addEntity("MedicineBox");
+        medicineBox.addIdProperty().autoincrement();
+        medicineBox.addStringProperty("personName");
+        medicineBox.addStringProperty("personImage");
+        medicineBox.addIntProperty("personGender");
+        medicineBox.addIntProperty("personAge");
+        medicineBox.addStringProperty("medicines");
 
-        medicine.addIdProperty().autoincrement();
-        medicine.addStringProperty("medicineId");
-        medicine.addStringProperty("name");
-        medicine.addStringProperty("commonName");
-        medicine.addStringProperty("efficacy");
-        medicine.addStringProperty("imageUrl");
-        medicine.addStringProperty("companyName");
-        medicine.addStringProperty("price");
-        medicine.addIntProperty("type");
-        medicine.addIntProperty("attribute");
+        Entity notification = schema.addEntity("Notification");
+        notification.addIdProperty().autoincrement();
+        notification.addStringProperty("personName");
+        notification.addStringProperty("medicineId");
+        notification.addDateProperty("startDate");
+        notification.addIntProperty("repeatCount");
+        notification.addBooleanProperty("notificationEnabled");
 
         new DaoGenerator().generateAll(schema, "../app/src/main/java/");
 

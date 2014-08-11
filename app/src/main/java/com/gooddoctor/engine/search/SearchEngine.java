@@ -7,7 +7,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
-import com.gooddoctor.data.MedicineList;
+import com.gooddoctor.data.gson.MedicineOnlineList;
 import com.gooddoctor.engine.constant.NetworkConst;
 
 import org.json.JSONObject;
@@ -27,7 +27,7 @@ public class SearchEngine {
         JsonObjectRequest request = new JsonObjectRequest(url, null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject jsonObject) {
-                MedicineList list = MedicineList.fromJson(jsonObject);
+                MedicineOnlineList list = MedicineOnlineList.fromJson(jsonObject);
 
                 if (listener != null) {
                     SearchMedicineResult result = new SearchMedicineResult();

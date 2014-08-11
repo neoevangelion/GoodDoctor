@@ -7,20 +7,9 @@ import android.view.View;
 /**
  * Created by Administrator on 2014/8/9.
  */
-public abstract class CollapsibleMenu extends View {
-    public CollapsibleMenu(Context context) {
-        super(context);
-    }
+public interface CollapsibleMenu {
 
-    public CollapsibleMenu(Context context, AttributeSet attrs) {
-        super(context, attrs);
-    }
+    public void collapse();
 
-    public CollapsibleMenu(Context context, AttributeSet attrs, int defStyleAttr) {
-        super(context, attrs, defStyleAttr);
-    }
-
-    public abstract void collapse();
-
-    public abstract void expand();
+    public void expand();
 }

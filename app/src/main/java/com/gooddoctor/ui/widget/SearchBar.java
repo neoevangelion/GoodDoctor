@@ -22,7 +22,7 @@ public class SearchBar extends FrameLayout {
     private Button mCancelButton;
     private Button mInterceptButton;
     private EditText mEdit;
-    private WeakReference<SearchActionHandler> mActionHandler;
+    private WeakReference<SearchBarActionHandler> mActionHandler;
 
     public SearchBar(Context context) {
         super(context);
@@ -53,8 +53,8 @@ public class SearchBar extends FrameLayout {
         mSearchButton.setVisibility(visibility);
     }
 
-    public void setSearchActionHandler(SearchActionHandler handler) {
-        mActionHandler = new WeakReference<SearchActionHandler>(handler);
+    public void setSearchActionHandler(SearchBarActionHandler handler) {
+        mActionHandler = new WeakReference<SearchBarActionHandler>(handler);
     }
 
     private void initView(Context context) {
@@ -72,7 +72,7 @@ public class SearchBar extends FrameLayout {
             @Override
             public void onClick(View v) {
                 if (mActionHandler != null) {
-                    SearchActionHandler handler = mActionHandler.get();
+                    SearchBarActionHandler handler = mActionHandler.get();
                     if (handler != null) {
                         handler.onSearch(mEdit.getText().toString());
                     }
@@ -84,7 +84,7 @@ public class SearchBar extends FrameLayout {
             @Override
             public void onClick(View v) {
                 if (mActionHandler != null) {
-                    SearchActionHandler handler = mActionHandler.get();
+                    SearchBarActionHandler handler = mActionHandler.get();
                     if (handler != null) {
                         handler.onCancel();
                     }

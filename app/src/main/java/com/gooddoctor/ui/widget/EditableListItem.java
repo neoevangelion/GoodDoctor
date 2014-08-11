@@ -47,7 +47,7 @@ public class EditableListItem extends FrameLayout {
 
     private void initView() {
         LayoutInflater inflater = LayoutInflater.from(getContext());
-        inflater.inflate(R.layout.editable_list_item, this);
+        inflater.inflate(R.layout.list_item_editable, this);
 
         mContentViewGroup = (ViewGroup)findViewById(R.id.editable_list_item_layout_center);
         mDeleteButton = findViewById(R.id.editable_list_item_delete_button);
