@@ -1,0 +1,46 @@
+package com.gooddoctor.ui.medicine;
+
+import android.app.Activity;
+import android.graphics.Color;
+import android.support.v7.app.ActionBarActivity;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.widget.ListView;
+
+import com.gooddoctor.R;
+import com.gooddoctor.ui.widget.SideMenuView;
+
+import butterknife.ButterKnife;
+import butterknife.InjectView;
+
+public class MedicineCategoryListActivity extends Activity implements MedicineCategoryMenu.OnCategoryClickListener {
+
+    @InjectView(R.id.medicine_category_side_menu_view)
+    SideMenuView mContainer;
+
+    private ListView mDetailView;
+    private MedicineCategoryMenu mMenuView;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_medicine_category_list);
+
+        ButterKnife.inject(this);
+
+        mMenuView = new MedicineCategoryMenu(this);
+        mDetailView = new ListView(this);
+
+        mContainer.setMenuView(mMenuView);
+        mContainer.setDetailView(mDetailView);
+
+        mMenuView.setOnCategoryClickListener(this);
+        mDetailView.setBackgroundColor(Color.RED);
+    }
+
+
+    @Override
+    public void onClick(MedicineCategoryMenu.MedicineCategory category) {
+        mContainer.collapseMenu();
+    }
+}
