@@ -2,13 +2,11 @@ package com.gooddoctor.ui.medicine;
 
 import android.app.Activity;
 import android.graphics.Color;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.widget.ListView;
 
 import com.gooddoctor.R;
-import com.gooddoctor.ui.widget.SideMenuView;
+import com.tuyuanlin.customwidget.SideMenuView;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;

@@ -43,4 +43,5 @@ dependencies {
     compile 'com.android.support:support-v4:19.+'
     compile 'de.greenrobot:greendao:1.3.7@jar'
     compile 'com.android.support:appcompat-v7:19.+'
+    compile project(':widget')
 }

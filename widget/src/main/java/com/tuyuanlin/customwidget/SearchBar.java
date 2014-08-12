@@ -1,4 +1,4 @@
-package com.gooddoctor.ui.widget;
+package com.tuyuanlin.customwidget;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -12,7 +12,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 
-import com.gooddoctor.R;
 
 import java.lang.ref.WeakReference;
 

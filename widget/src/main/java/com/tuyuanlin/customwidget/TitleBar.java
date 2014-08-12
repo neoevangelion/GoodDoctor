@@ -1,4 +1,4 @@
-package com.gooddoctor.ui.widget;
+package com.tuyuanlin.customwidget;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -10,7 +10,7 @@ import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
-import com.gooddoctor.R;
+import com.tuyuanlin.customwidget.R;
 
 public class TitleBar extends FrameLayout {
 

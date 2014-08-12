@@ -10,9 +10,10 @@ import com.gooddoctor.R;
 import com.gooddoctor.engine.search.SearchEngine;
 import com.gooddoctor.engine.search.SearchResult;
 import com.gooddoctor.engine.search.SearchResultListener;
-import com.gooddoctor.ui.widget.SearchBarActionHandler;
-import com.gooddoctor.ui.widget.SearchBar;
-import com.gooddoctor.ui.widget.TitleBar;
+import com.tuyuanlin.customwidget.SearchBar;
+import com.tuyuanlin.customwidget.SearchBarActionHandler;
+import com.tuyuanlin.customwidget.TitleBar;
+
 
 public class SearchActivity extends FragmentActivity {
 

@@ -1,4 +1,4 @@
-package com.gooddoctor.ui.widget;
+package com.tuyuanlin.customwidget;
 
 import android.content.Context;
 import android.util.AttributeSet;

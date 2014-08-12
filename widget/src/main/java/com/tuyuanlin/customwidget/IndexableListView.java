@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.gooddoctor.ui.widget;
+package com.tuyuanlin.customwidget;
 
 
 import android.content.Context;

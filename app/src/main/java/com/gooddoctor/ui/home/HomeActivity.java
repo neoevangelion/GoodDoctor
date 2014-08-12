@@ -8,14 +8,16 @@ import android.view.View;
 
 import com.gooddoctor.R;
 import com.gooddoctor.ui.search.SearchActivity;
-import com.gooddoctor.ui.widget.SearchBar;
+import com.tuyuanlin.customwidget.SearchBar;
+
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
 public class HomeActivity extends FragmentActivity {
 
-    @InjectView(R.id.home_search_bar) SearchBar mSearchBar;
+    @InjectView(R.id.home_search_bar)
+    SearchBar mSearchBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

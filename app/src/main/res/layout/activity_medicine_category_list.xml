@@ -5,16 +5,16 @@
               android:orientation="vertical"
               tools:context="${relativePackage}.${activityClass}">
 
-    <com.gooddoctor.ui.widget.TitleBar
+    <com.tuyuanlin.customwidget.TitleBar
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-    </com.gooddoctor.ui.widget.TitleBar>
+    </com.tuyuanlin.customwidget.TitleBar>
 
-    <com.gooddoctor.ui.widget.SideMenuView
+    <com.tuyuanlin.customwidget.SideMenuView
             android:id="@+id/medicine_category_side_menu_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-    </com.gooddoctor.ui.widget.SideMenuView>
+    </com.tuyuanlin.customwidget.SideMenuView>
 </LinearLayout>

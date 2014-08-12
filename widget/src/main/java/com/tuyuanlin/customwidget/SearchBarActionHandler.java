@@ -1,4 +1,4 @@
-package com.gooddoctor.ui.widget;
+package com.tuyuanlin.customwidget;
 
 /**
  * Created by eWalk_iOS on 14-8-8.

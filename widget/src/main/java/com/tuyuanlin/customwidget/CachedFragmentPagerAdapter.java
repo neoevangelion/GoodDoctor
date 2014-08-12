@@ -1,4 +1,4 @@
-package com.gooddoctor.ui.widget;
+package com.tuyuanlin.customwidget;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;

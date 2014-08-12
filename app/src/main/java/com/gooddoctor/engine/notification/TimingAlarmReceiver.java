@@ -4,8 +4,8 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 
-public class MedicineNotificationReceiver extends BroadcastReceiver {
-    public MedicineNotificationReceiver() {
+public class TimingAlarmReceiver extends BroadcastReceiver {
+    public TimingAlarmReceiver() {
     }
 
     @Override

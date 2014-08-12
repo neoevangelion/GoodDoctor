@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 
 import com.gooddoctor.R;
-import com.gooddoctor.ui.widget.CollapsibleMenu;
+import com.tuyuanlin.customwidget.CollapsibleMenu;
 
 /**
  * Created by Administrator on 2014/8/10.

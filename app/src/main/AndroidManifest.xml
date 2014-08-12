@@ -64,7 +64,7 @@
         <activity android:name=".ui.disease.DiseaseListActivity" >
         </activity>
 
-        <receiver android:name=".engine.notification.MedicineNotificationReceiver" >
+        <receiver android:name=".engine.notification.TimingAlarmReceiver" >
             <intent-filter>
                 <action android:name="com.gooddoctor.notification.TIME_OUT" />
 

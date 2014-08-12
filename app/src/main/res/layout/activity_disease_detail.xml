@@ -5,11 +5,11 @@
               android:orientation="vertical"
               tools:context="${relativePackage}.${activityClass}">
 
-    <com.gooddoctor.ui.widget.TitleBar
+    <com.tuyuanlin.customwidget.TitleBar
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-    </com.gooddoctor.ui.widget.TitleBar>
+    </com.tuyuanlin.customwidget.TitleBar>
 
     <RadioGroup
             android:layout_width="match_parent"
