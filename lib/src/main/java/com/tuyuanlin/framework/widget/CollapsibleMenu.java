@@ -1,8 +1,4 @@
-package com.tuyuanlin.customwidget;
-
-import android.content.Context;
-import android.util.AttributeSet;
-import android.view.View;
+package com.tuyuanlin.framework.widget;
 
 /**
  * Created by Administrator on 2014/8/9.

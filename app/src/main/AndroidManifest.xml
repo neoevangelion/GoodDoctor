@@ -24,7 +24,6 @@
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
             android:value="PSdrD0ULUk5G97mvK9hQQflB" />
-
         <activity
             android:name=".ui.home.HomeActivity"
             android:configChanges="orientation|keyboardHidden"
@@ -64,17 +63,20 @@
         <activity android:name=".ui.disease.DiseaseListActivity" >
         </activity>
 
-        <receiver android:name=".engine.notification.TimingAlarmReceiver" >
+        <receiver android:name=".engine.notification.MedicineAlarmReceiver" >
             <intent-filter>
-                <action android:name="com.gooddoctor.notification.TIME_OUT" />
-
+                <action android:name="com.timingalarm.TIME_OUT" />
                 <category android:name="android.intent.category.DEFAULT" />
+                <data android:scheme="alarming" android:host="com.timingalarm"/>
             </intent-filter>
         </receiver>
 
         <activity
-            android:name=".ui.disease.DiseaseDetailActivity"
-            android:label="@string/title_activity_disease_detail" >
+            android:name=".ui.disease.DiseaseDetailActivity">
+        </activity>
+
+        <activity android:name=".ui.medicine.MedicineMapActivity">
+
         </activity>
     </application>
 

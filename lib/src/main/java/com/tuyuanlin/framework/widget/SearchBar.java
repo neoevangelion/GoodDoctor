@@ -1,4 +1,4 @@
-package com.tuyuanlin.customwidget;
+package com.tuyuanlin.framework.widget;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -12,7 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 
-
+import com.tuyuanlin.framework.R;
 import java.lang.ref.WeakReference;
 
 public class SearchBar extends FrameLayout {
@@ -58,7 +58,7 @@ public class SearchBar extends FrameLayout {
 
     private void initView(Context context) {
         LayoutInflater inflater = LayoutInflater.from(context);
-        inflater.inflate(R.layout.widget_search_bar, this);
+        View view = inflater.inflate(R.layout.widget_search_bar, this);
 
         mEdit = (EditText)findViewById(R.id.search_bar_edit_text);
         mSearchButton = (Button)findViewById(R.id.search_bar_search_button);

@@ -1,6 +1,7 @@
 apply plugin: 'android'
 
 android {
+
     signingConfigs {
         developer {
             keyAlias 'tuyuanlin'
@@ -22,6 +23,10 @@ android {
         release {
             runProguard false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.developer
+        }
+        debug {
+            signingConfig signingConfigs.developer
         }
     }
     productFlavors {
@@ -42,6 +47,6 @@ dependencies {
     compile files('libs/butterknife-5.1.2.jar')
     compile 'com.android.support:support-v4:19.+'
     compile 'de.greenrobot:greendao:1.3.7@jar'
-    compile 'com.android.support:appcompat-v7:19.+'
-    compile project(':widget')
+    compile project(':lib')
+    compile files('libs/BaiduLBS_Android.jar')
 }

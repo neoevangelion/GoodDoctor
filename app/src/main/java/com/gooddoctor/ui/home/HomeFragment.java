@@ -10,6 +10,8 @@ import android.view.ViewGroup;
 import com.gooddoctor.R;
 import com.gooddoctor.ui.disease.DiseaseListActivity;
 import com.gooddoctor.ui.medicine.MedicineCategoryListActivity;
+import com.gooddoctor.ui.medicine.MedicineMapActivity;
+import com.gooddoctor.ui.notification.EditNotificationActivity;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -33,6 +35,16 @@ public class HomeFragment extends Fragment {
 
     @OnClick(R.id.home_all_products) void gotoAllProducts() {
         Intent intent = new Intent(getActivity(), MedicineCategoryListActivity.class);
+        startActivity(intent);
+    }
+
+    @OnClick(R.id.home_medicine_notification) void gotoNotification() {
+        Intent intent = new Intent(getActivity(), EditNotificationActivity.class);
+        startActivity(intent);
+    }
+
+    @OnClick(R.id.home_nearby_shop) void gotoMedicineMap() {
+        Intent intent = new Intent(getActivity(), MedicineMapActivity.class);
         startActivity(intent);
     }
 }

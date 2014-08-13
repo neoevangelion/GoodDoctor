@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.tuyuanlin.customwidget;
+package com.tuyuanlin.framework.widget;
 
 import android.content.Context;
 import android.graphics.Canvas;

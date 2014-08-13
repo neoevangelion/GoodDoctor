@@ -1,4 +1,4 @@
-package com.tuyuanlin.customwidget;
+package com.tuyuanlin.framework.widget;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -10,7 +10,7 @@ import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
-import com.tuyuanlin.customwidget.R;
+import com.tuyuanlin.framework.R;
 
 public class TitleBar extends FrameLayout {
 

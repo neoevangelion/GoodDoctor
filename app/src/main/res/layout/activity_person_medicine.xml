@@ -5,12 +5,12 @@
               android:orientation="vertical"
               tools:context="${relativePackage}.${activityClass}">
 
-    <com.tuyuanlin.customwidget.TitleBar
+    <com.tuyuanlin.framework.widget.TitleBar
             android:id="@+id/person_title_bar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-    </com.tuyuanlin.customwidget.TitleBar>
+    </com.tuyuanlin.framework.widget.TitleBar>
 
     <ListView
             android:id="@+id/person_list_view"

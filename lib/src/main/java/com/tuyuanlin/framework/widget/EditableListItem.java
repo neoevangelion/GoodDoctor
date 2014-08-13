@@ -1,4 +1,4 @@
-package com.tuyuanlin.customwidget;
+package com.tuyuanlin.framework.widget;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
-import com.tuyuanlin.customwidget.R;
+import com.tuyuanlin.framework.R;
 /**
  * Created by Administrator on 2014/8/9.
  */

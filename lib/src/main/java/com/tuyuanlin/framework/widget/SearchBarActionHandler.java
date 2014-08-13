@@ -1,4 +1,4 @@
-package com.tuyuanlin.customwidget;
+package com.tuyuanlin.framework.widget;
 
 /**
  * Created by eWalk_iOS on 14-8-8.

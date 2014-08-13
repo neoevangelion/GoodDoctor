@@ -8,7 +8,7 @@ import android.view.View;
 
 import com.gooddoctor.R;
 import com.gooddoctor.ui.search.SearchActivity;
-import com.tuyuanlin.customwidget.SearchBar;
+import com.tuyuanlin.framework.widget.SearchBar;
 
 
 import butterknife.ButterKnife;

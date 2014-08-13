@@ -1,4 +1,4 @@
-package com.tuyuanlin.customwidget;
+package com.tuyuanlin.framework.widget;
 
 import android.content.Context;
 import android.util.AttributeSet;

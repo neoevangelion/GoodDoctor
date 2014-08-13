@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.widget.ListView;
 
 import com.gooddoctor.R;
-import com.tuyuanlin.customwidget.SideMenuView;
+import com.tuyuanlin.framework.widget.SideMenuView;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;

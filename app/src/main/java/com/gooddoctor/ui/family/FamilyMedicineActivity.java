@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.widget.ListView;
 
 import com.gooddoctor.R;
-import com.tuyuanlin.customwidget.TitleBar;
+import com.tuyuanlin.framework.widget.TitleBar;
 
 public class FamilyMedicineActivity extends Activity {
 
