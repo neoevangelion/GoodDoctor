@@ -5,6 +5,10 @@ package com.gooddoctor.engine.constant;
  */
 public class ProtocolConst {
 
+    // Common JSON
+    public static final String RESULT                   = "result";
+    public static final String WRONG_RESULT             = "wrong";
+
     // Medicine JSON
     public static final String MEDICINE_PAGES           = "pages";
     public static final String MEDICINE_LIST            = "list";

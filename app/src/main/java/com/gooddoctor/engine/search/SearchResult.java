@@ -6,11 +6,11 @@ package com.gooddoctor.engine.search;
 public class SearchResult {
     private boolean mIsSucceed;
 
-    public boolean isIsSucceed() {
+    public boolean isSucceed() {
         return mIsSucceed;
     }
 
-    public void setIsSucceed(boolean isSucceed) {
+    public void setSucceed(boolean isSucceed) {
         this.mIsSucceed = isSucceed;
     }
 }

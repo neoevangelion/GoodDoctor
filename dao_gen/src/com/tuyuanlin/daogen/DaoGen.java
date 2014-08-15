@@ -11,20 +11,20 @@ public class DaoGen {
     public static void main(String[] args) throws Exception {
         Schema schema = new Schema(1, "com.gooddoctor.data.dao");
 
-        Entity disease = schema.addEntity("Disease");
+        Entity disease = schema.addEntity("DBDisease");
         disease.addIdProperty().autoincrement();
         disease.addStringProperty("diseaseId");
         disease.addStringProperty("name");
         disease.addStringProperty("pinyin");
         disease.addIntProperty("productNum");
 
-        Entity boxedMedicine = schema.addEntity("BoxedMedicine");
+        Entity boxedMedicine = schema.addEntity("DBBoxedMedicine");
         boxedMedicine.addIdProperty().autoincrement();
         boxedMedicine.addStringProperty("medicineId");
         boxedMedicine.addStringProperty("medicineName");
         boxedMedicine.addStringProperty("companyName");
 
-        Entity medicineBox = schema.addEntity("MedicineBox");
+        Entity medicineBox = schema.addEntity("DBMedicineBox");
         medicineBox.addIdProperty().autoincrement();
         medicineBox.addStringProperty("personName");
         medicineBox.addStringProperty("personImage");
@@ -32,7 +32,7 @@ public class DaoGen {
         medicineBox.addIntProperty("personAge");
         medicineBox.addStringProperty("medicines");
 
-        Entity notification = schema.addEntity("Notification");
+        Entity notification = schema.addEntity("DBNotification");
         notification.addIdProperty().autoincrement();
         notification.addStringProperty("personName");
         notification.addStringProperty("medicineId");

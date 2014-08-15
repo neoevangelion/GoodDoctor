@@ -5,7 +5,7 @@ import java.util.List;
 /**
  * Created by eWalk_iOS on 14-8-11.
  */
-public class DiseaseList {
+public class DiseaseResultData {
     private List<DiseaseCategory> list;
 
     public List<DiseaseCategory> getList() {

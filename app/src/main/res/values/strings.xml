@@ -5,8 +5,5 @@
 
     <!-- Disease Activity -->
     <string name="disease_activity_split">,</string>
-    <string name="title_activity_disease_detail">DiseaseDetailActivity</string>
-    <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
 
 </resources>

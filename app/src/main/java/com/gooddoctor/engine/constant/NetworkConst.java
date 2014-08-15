@@ -10,7 +10,7 @@ public class NetworkConst {
 
     public static final String GET_DISEASE_LIST_QUERY = "?a=getill";
 
-    public static final String GET_MEDICINE_BY_DISEASE_QUERY = "?a=getdruglist&type=ill&id=%s&pagesize=%d&page=%d";
+    public static final String SEARCH_MEDICINE_BY_DISEASE_QUERY = "?a=getdruglist&type=ill&id=%s&pagesize=%d&page=%d";
 
     public static final String SEARCH_MEDICINE_BY_KEYWORD_QUERY = "?a=searchdruglist&keywords=%s&pagesize=%d&page=%d";
 }

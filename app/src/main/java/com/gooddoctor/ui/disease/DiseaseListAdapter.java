@@ -10,14 +10,14 @@ import android.widget.TextView;
 
 import com.gooddoctor.R;
 import com.gooddoctor.data.gson.DiseaseCategory;
-import com.gooddoctor.data.gson.DiseaseList;
+import com.gooddoctor.data.gson.DiseaseResultData;
 
 /**
  * Created by eWalk_iOS on 14-8-11.
  */
 public class DiseaseListAdapter extends BaseExpandableListAdapter {
 
-    private DiseaseList mData;
+    private DiseaseResultData mData;
     private LayoutInflater mInflater;
     private String mDetailSplit;
 
@@ -26,11 +26,11 @@ public class DiseaseListAdapter extends BaseExpandableListAdapter {
         mDetailSplit = context.getString(R.string.disease_activity_split);
     }
 
-    public void setData(DiseaseList data) {
+    public void setData(DiseaseResultData data) {
         mData = data;
     }
 
-    public DiseaseList getData() {
+    public DiseaseResultData getData() {
         return mData;
     }
 

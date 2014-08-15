@@ -6,67 +6,38 @@ package com.gooddoctor.data.gson;
  */
 public class Medicine {
 
-    private Long id;
-    private String medicineId;
-    private String name;
-    private String commonName;
+    private String id;
+    private String nameDrug;
+    private String nameCommon;
     private String efficacy;
-    private String imageUrl;
-    private String companyName;
+    private String image;
+    private String nameCompany;
     private String price;
     private Integer type;
     private Integer attribute;
 
-    public Medicine() {
-    }
-
-    public Medicine(Long id) {
-        this.id = id;
-    }
-
-    public Medicine(Long id, String medicineId, String name, String commonName, String efficacy, String imageUrl, String companyName, String price, Integer type, Integer attribute) {
-        this.id = id;
-        this.medicineId = medicineId;
-        this.name = name;
-        this.commonName = commonName;
-        this.efficacy = efficacy;
-        this.imageUrl = imageUrl;
-        this.companyName = companyName;
-        this.price = price;
-        this.type = type;
-        this.attribute = attribute;
-    }
-
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
-    public String getMedicineId() {
-        return medicineId;
+    public String getNameDrug() {
+        return nameDrug;
     }
 
-    public void setMedicineId(String medicineId) {
-        this.medicineId = medicineId;
+    public void setNameDrug(String nameDrug) {
+        this.nameDrug = nameDrug;
     }
 
-    public String getName() {
-        return name;
+    public String getNameCommon() {
+        return nameCommon;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getCommonName() {
-        return commonName;
-    }
-
-    public void setCommonName(String commonName) {
-        this.commonName = commonName;
+    public void setNameCommon(String nameCommon) {
+        this.nameCommon = nameCommon;
     }
 
     public String getEfficacy() {
@@ -77,20 +48,20 @@ public class Medicine {
         this.efficacy = efficacy;
     }
 
-    public String getImageUrl() {
-        return imageUrl;
+    public String getImage() {
+        return image;
     }
 
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
+    public void setImage(String image) {
+        this.image = image;
     }
 
-    public String getCompanyName() {
-        return companyName;
+    public String getNameCompany() {
+        return nameCompany;
     }
 
-    public void setCompanyName(String companyName) {
-        this.companyName = companyName;
+    public void setNameCompany(String nameCompany) {
+        this.nameCompany = nameCompany;
     }
 
     public String getPrice() {
@@ -116,5 +87,4 @@ public class Medicine {
     public void setAttribute(Integer attribute) {
         this.attribute = attribute;
     }
-
 }

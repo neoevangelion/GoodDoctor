@@ -1,18 +1,30 @@
 package com.gooddoctor.engine.search;
 
-import com.gooddoctor.data.gson.MedicineOnlineList;
+import com.gooddoctor.data.gson.MedicineResultData;
+import com.gooddoctor.engine.constant.ProtocolConst;
+import com.google.gson.Gson;
+
 
 /**
  * Created by eWalk_iOS on 14-8-8.
  */
 public class SearchMedicineResult extends SearchResult {
-    private MedicineOnlineList mMedicines;
+    private MedicineResultData mMedicines;
 
-    public MedicineOnlineList getMedicines() {
-        return mMedicines;
+    public static SearchMedicineResult createResultFromJson(String json) {
+        SearchMedicineResult result = new SearchMedicineResult();
+        Gson gson = new Gson();
+        result.mMedicines = gson.fromJson(json, MedicineResultData.class);
+
+        if (result.mMedicines.getResult() != null && result.mMedicines.getResult().equals(ProtocolConst.WRONG_RESULT)) {
+            result.setSucceed(false);
+        } else {
+            result.setSucceed(true);
+        }
+        return result;
     }
 
-    public void setMedicines(MedicineOnlineList mMedicines) {
-        this.mMedicines = mMedicines;
+    public MedicineResultData getMedicines() {
+        return mMedicines;
     }
 }
