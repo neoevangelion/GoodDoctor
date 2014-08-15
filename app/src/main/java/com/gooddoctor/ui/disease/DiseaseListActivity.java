@@ -12,7 +12,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.gooddoctor.R;
 import com.gooddoctor.data.gson.DiseaseResultData;
-import com.gooddoctor.engine.constant.NetworkConst;
+import com.gooddoctor.engine.NetworkConst;
 import com.google.gson.Gson;
 
 import butterknife.ButterKnife;

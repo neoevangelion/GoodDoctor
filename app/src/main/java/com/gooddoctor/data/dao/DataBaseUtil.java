@@ -2,7 +2,7 @@ package com.gooddoctor.data.dao;
 
 import android.content.Context;
 
-import com.gooddoctor.engine.constant.DataBaseConst;
+import com.gooddoctor.engine.DataBaseConst;
 
 /**
  * Created by eWalk_iOS on 14-8-12.

@@ -1,12 +1,5 @@
 package com.gooddoctor.data.gson;
 
-import com.gooddoctor.engine.constant.ProtocolConst;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.ArrayList;
 import java.util.List;
 
 /**

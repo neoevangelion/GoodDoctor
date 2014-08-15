@@ -1,4 +1,4 @@
-package com.gooddoctor.engine.constant;
+package com.gooddoctor.engine;
 
 /**
  * Created by eWalk_iOS on 14-8-8.

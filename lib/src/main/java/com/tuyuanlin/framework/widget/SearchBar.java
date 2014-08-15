@@ -46,6 +46,7 @@ public class SearchBar extends FrameLayout {
 
     public void setInterceptMode(boolean interceptMode) {
         mInterceptButton.setVisibility((interceptMode) ? VISIBLE : GONE);
+        mEdit.setCursorVisible(!interceptMode);
     }
 
     public void setSearchButtonVisibility(int visibility) {

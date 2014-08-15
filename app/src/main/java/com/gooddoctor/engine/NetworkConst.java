@@ -1,4 +1,4 @@
-package com.gooddoctor.engine.constant;
+package com.gooddoctor.engine;
 
 import java.net.URL;
 

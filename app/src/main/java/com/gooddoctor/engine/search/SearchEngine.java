@@ -5,12 +5,9 @@ import android.content.Context;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.gooddoctor.engine.constant.NetworkConst;
-
-import org.json.JSONObject;
+import com.gooddoctor.engine.NetworkConst;
 
 
 public class SearchEngine {
@@ -28,11 +25,12 @@ public class SearchEngine {
         searchMedicineByUrl(url, listener);
     }
 
-    public void searchMedicineByDiseaseId(String diseaseId, int pageSize, int page, final SearchResultListener listener) {
-        String url = NetworkConst.HOST_NAME + NetworkConst.SEARCH_MEDICINE_BY_DISEASE_QUERY;
-        url = String.format(url, diseaseId, pageSize, page);
+    public void searchQueryByKeyword(String keyWord, final SearchResultListener listener) {
 
-        searchMedicineByUrl(url, listener);
+    }
+
+    public void searchDiseaseByKeyword(String keyWord, final SearchResultListener listener) {
+
     }
 
     public void cancelAll() {

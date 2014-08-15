@@ -1,7 +1,7 @@
 package com.gooddoctor.engine.search;
 
 import com.gooddoctor.data.gson.MedicineResultData;
-import com.gooddoctor.engine.constant.ProtocolConst;
+import com.gooddoctor.engine.ProtocolConst;
 import com.google.gson.Gson;
 
 

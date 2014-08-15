@@ -64,7 +64,7 @@
         <activity android:name=".ui.disease.DiseaseListActivity" >
         </activity>
 
-        <receiver android:name=".engine.notification.MedicineAlarmReceiver" >
+        <receiver android:name=".engine.MedicineAlarmReceiver" >
             <intent-filter>
                 <action android:name="com.timingalarm.TIME_OUT" />
 

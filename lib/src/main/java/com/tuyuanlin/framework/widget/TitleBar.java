@@ -84,6 +84,13 @@ public class TitleBar extends FrameLayout {
         container.addView(view, layoutParams);
     }
 
+    public void setTitle(String title) {
+        if (title != null) {
+            mTitleStr = title;
+            mTitleTextView.setText(mTitleStr);
+        }
+    }
+
     private void initView(Context context) {
         LayoutInflater inflater = LayoutInflater.from(context);
         inflater.inflate(R.layout.widget_title_bar, this);
