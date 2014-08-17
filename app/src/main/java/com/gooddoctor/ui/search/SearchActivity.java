@@ -57,7 +57,7 @@ public class SearchActivity extends FragmentActivity {
     }
 
     private void doSearch(String keyword) {
-        SearchEngine engine = new SearchEngine(this);
+        SearchEngine engine = SearchEngine.getInstance(this);
         engine.searchMedicineByKeyword(keyword, PAGE_SIZE, 0, mSearchResultListener);
     }
 

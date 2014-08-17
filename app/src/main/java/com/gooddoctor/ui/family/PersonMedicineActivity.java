@@ -1,6 +1,6 @@
 package com.gooddoctor.ui.family;
 
-import android.support.v7.app.ActionBarActivity;
+import android.app.Activity;
 import android.os.Bundle;
 import android.widget.ListView;
 
@@ -9,7 +9,7 @@ import com.gooddoctor.R;
 import com.tuyuanlin.framework.widget.TitleBar;
 
 
-public class PersonMedicineActivity extends ActionBarActivity {
+public class PersonMedicineActivity extends Activity {
     private TitleBar mTitleBar;
     private ListView mListView;
 

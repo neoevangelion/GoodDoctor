@@ -1,12 +1,12 @@
 package com.gooddoctor.ui.notification;
 
-import android.support.v7.app.ActionBarActivity;
+import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import com.gooddoctor.R;
 
-public class NotificationListActivity extends ActionBarActivity {
+public class NotificationListActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

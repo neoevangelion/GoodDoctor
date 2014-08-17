@@ -9,27 +9,46 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.gooddoctor.engine.NetworkConst;
 
+import java.lang.ref.WeakReference;
+import java.util.HashMap;
 
+// This class is NOT thread-safe
 public class SearchEngine {
-    private RequestQueue mRequestQueue;
-    private static final String SEARCH_REQUEST_TAG = "SEARCH_REQUEST";
 
-    public SearchEngine(Context context) {
-        mRequestQueue = Volley.newRequestQueue(context);
+    private static final String SEARCH_REQUEST_TAG = "SEARCH_REQUEST";
+    private static int mRequestId = 0;
+    private RequestQueue mRequestQueue;
+    private static SearchEngine mInstance;
+    private HashMap<Integer, WeakReference<SearchResultListener>> mListenerList;
+
+    public static SearchEngine getInstance(Context context) {
+        if (mInstance == null) {
+            mInstance = new SearchEngine(context);
+        }
+        return mInstance;
     }
 
-    public void searchMedicineByKeyword(String keyWord, int pageSize, int page, final SearchResultListener listener) {
+    private SearchEngine(Context context) {
+        mRequestQueue = Volley.newRequestQueue(context);
+        mListenerList = new HashMap<Integer, WeakReference<SearchResultListener>>();
+    }
+
+    public void searchMedicineByKeyword(String keyWord, int pageSize, int page, SearchResultListener listener) {
         String url = NetworkConst.HOST_NAME + NetworkConst.SEARCH_MEDICINE_BY_KEYWORD_QUERY;
         url = String.format(url, keyWord, pageSize, page);
 
         searchMedicineByUrl(url, listener);
     }
 
-    public void searchQueryByKeyword(String keyWord, final SearchResultListener listener) {
+    public void searchQueryByKeyword(String keyWord, SearchResultListener listener) {
 
     }
 
-    public void searchDiseaseByKeyword(String keyWord, final SearchResultListener listener) {
+    public void searchDiseaseByKeyword(String keyWord, SearchResultListener listener) {
+
+    }
+
+    public void searchMedicineByDiseaseId(String diseaseId, int pageSize, int page, SearchResultListener listener) {
 
     }
 
@@ -38,23 +57,39 @@ public class SearchEngine {
         mRequestQueue.cancelAll(SEARCH_REQUEST_TAG);
     }
 
-    private void searchMedicineByUrl(String url, final SearchResultListener listener) {
+    private int addListener(SearchResultListener listener) {
+        if (mRequestId == Integer.MAX_VALUE) {
+            mRequestId = 0;
+        } else {
+            mRequestId++;
+        }
+        WeakReference<SearchResultListener> weakListener = new WeakReference<SearchResultListener>(listener);
+        mListenerList.put(mRequestId, weakListener);
+        return mRequestId;
+    }
+
+    private void notifyListener(int id, SearchResult result) {
+        WeakReference<SearchResultListener> weakListener = mListenerList.get(id);
+        if (weakListener != null && weakListener.get() != null) {
+            weakListener.get().handleSearchResult(result);
+        }
+    }
+
+    private void searchMedicineByUrl(String url, SearchResultListener listener) {
+        final int id = addListener(listener);
+
         StringRequest request = new StringRequest(url, new Response.Listener<String>() {
             @Override
             public void onResponse(String string) {
-                if (listener != null) {
-                    SearchMedicineResult result = SearchMedicineResult.createResultFromJson(string);
-                    listener.handleSearchResult(result);
-                }
+                SearchMedicineResult result = SearchMedicineResult.createResultFromJson(string);
+                notifyListener(id, result);
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError volleyError) {
-                if (listener != null) {
-                    SearchMedicineResult result = new SearchMedicineResult();
-                    result.setSucceed(false);
-                    listener.handleSearchResult(result);
-                }
+                SearchMedicineResult result = new SearchMedicineResult();
+                result.setSucceed(false);
+                notifyListener(id, result);
             }
         });
 

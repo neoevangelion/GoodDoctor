@@ -1,4 +1,4 @@
-package com.gooddoctor.engine;
+package com.gooddoctor.engine.notification;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;

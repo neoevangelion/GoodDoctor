@@ -6,7 +6,7 @@ android {
         developer {
             keyAlias 'tuyuanlin'
             keyPassword 'Eva198311'
-            storeFile file('/Users/eWalk_iOS/Documents/workspace/Android/GoodDoctor/developer_key.jks')
+            storeFile file('../developer_key.jks')
             storePassword 'Eva198311'
         }
     }
@@ -47,7 +47,6 @@ dependencies {
     compile files('libs/butterknife-5.1.2.jar')
     compile project(':lib')
     compile files('libs/BaiduLBS_Android.jar')
-    compile 'com.android.support:support-v4:19.+'
     compile 'de.greenrobot:greendao:1.3.7@jar'
-    compile 'com.android.support:appcompat-v7:19.+'
+    compile 'com.android.support:support-v4:+'
 }

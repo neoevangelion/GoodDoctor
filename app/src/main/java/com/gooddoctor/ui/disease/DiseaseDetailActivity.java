@@ -1,12 +1,12 @@
 package com.gooddoctor.ui.disease;
 
-import android.support.v7.app.ActionBarActivity;
+import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import com.gooddoctor.R;
 
-public class DiseaseDetailActivity extends ActionBarActivity {
+public class DiseaseDetailActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

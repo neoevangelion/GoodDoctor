@@ -6,6 +6,7 @@ import java.util.List;
  * Created by eWalk_iOS on 14-8-15.
  */
 public class MedicineDetail {
+    private String result;
     private String attribute;
     private String type;
     private String image;
@@ -27,6 +28,14 @@ public class MedicineDetail {
     private String druginteration;
     private String expertremand;
     private List<MedicineSimple> elselist;
+
+    public String getResult() {
+        return result;
+    }
+
+    public void setResult(String result) {
+        this.result = result;
+    }
 
     public String getAttribute() {
         return attribute;

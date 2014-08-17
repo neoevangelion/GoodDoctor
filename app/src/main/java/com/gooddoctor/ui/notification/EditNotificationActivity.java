@@ -5,7 +5,7 @@ import android.app.Activity;
 import android.app.AlarmManager;
 import android.os.Bundle;
 import com.gooddoctor.R;
-import com.gooddoctor.engine.MedicineAlarmReceiver;
+import com.gooddoctor.engine.notification.MedicineAlarmReceiver;
 import com.tuyuanlin.framework.tools.TimingAlarmHelper;
 
 import java.util.Calendar;

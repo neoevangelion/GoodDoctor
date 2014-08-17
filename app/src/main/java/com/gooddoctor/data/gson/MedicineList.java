@@ -5,7 +5,7 @@ import java.util.List;
 /**
  * Created by eWalk_iOS on 14-8-8.
  */
-public class MedicineResultData {
+public class MedicineList {
 
     private int pages;
     private List<Medicine> list;
