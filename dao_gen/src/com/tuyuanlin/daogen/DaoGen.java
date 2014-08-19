@@ -1,4 +1,4 @@
-package com.tuyuanlin.daogen;
+package com.zlianjie.daogen;
 
 import de.greenrobot.daogenerator.Entity;
 import de.greenrobot.daogenerator.Schema;

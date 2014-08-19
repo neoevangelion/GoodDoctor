@@ -5,12 +5,12 @@
               android:orientation="vertical"
               tools:context="${relativePackage}.${activityClass}">
 
-    <com.tuyuanlin.framework.widget.TitleBar
+    <com.zlianjie.framework.widget.TitleBar
             android:id="@+id/disease_list_title_bar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-    </com.tuyuanlin.framework.widget.TitleBar>
+    </com.zlianjie.framework.widget.TitleBar>
 
     <ExpandableListView
             android:id="@+id/disease_list_list_view"

@@ -5,11 +5,11 @@
               android:orientation="vertical"
               tools:context="${relativePackage}.${activityClass}">
 
-    <com.tuyuanlin.framework.widget.TitleBar
+    <com.zlianjie.framework.widget.TitleBar
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-    </com.tuyuanlin.framework.widget.TitleBar>
+    </com.zlianjie.framework.widget.TitleBar>
 
     <RadioGroup
             android:layout_width="match_parent"

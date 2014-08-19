@@ -5,7 +5,7 @@
               android:orientation="vertical"
               tools:context="${relativePackage}.${activityClass}">
 
-    <com.tuyuanlin.framework.widget.SearchBar
+    <com.zlianjie.framework.widget.SearchBar
             android:id="@+id/home_search_bar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
