@@ -1,6 +1,7 @@
 package com.gooddoctor.engine.search;
 
 import android.content.Context;
+import android.util.SparseArray;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -19,7 +20,7 @@ public class SearchEngine {
     private static int mRequestId = 0;
     private RequestQueue mRequestQueue;
     private static SearchEngine mInstance;
-    private HashMap<Integer, WeakReference<SearchResultListener>> mListenerList;
+    private SparseArray<WeakReference<SearchResultListener>> mListenerList;
 
     public static SearchEngine getInstance(Context context) {
         if (mInstance == null) {
@@ -30,7 +31,7 @@ public class SearchEngine {
 
     private SearchEngine(Context context) {
         mRequestQueue = Volley.newRequestQueue(context);
-        mListenerList = new HashMap<Integer, WeakReference<SearchResultListener>>();
+        mListenerList = new SparseArray<WeakReference<SearchResultListener>>();
     }
 
     public void searchMedicineByKeyword(String keyWord, int pageSize, int page, SearchResultListener listener) {
@@ -49,7 +50,10 @@ public class SearchEngine {
     }
 
     public void searchMedicineByDiseaseId(String diseaseId, int pageSize, int page, SearchResultListener listener) {
+        String url = NetworkConst.HOST_NAME + NetworkConst.SEARCH_MEDICINE_BY_DISEASE_QUERY;
+        url = String.format(url, diseaseId, pageSize, page);
 
+        searchMedicineByUrl(url, listener);
     }
 
     public void cancelAll() {
@@ -70,8 +74,11 @@ public class SearchEngine {
 
     private void notifyListener(int id, SearchResult result) {
         WeakReference<SearchResultListener> weakListener = mListenerList.get(id);
-        if (weakListener != null && weakListener.get() != null) {
-            weakListener.get().handleSearchResult(result);
+        if (weakListener != null) {
+            SearchResultListener listener = weakListener.get();
+            if (listener != null) {
+                listener.handleSearchResult(result);
+            }
         }
     }
 

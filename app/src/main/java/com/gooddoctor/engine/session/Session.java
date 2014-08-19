@@ -36,4 +36,16 @@ public class Session {
     public void getEvaluation() {
 
     }
+
+    public void getEvaluationPageInfo() {
+
+    }
+
+    public void submitEvaluation() {
+
+    }
+
+    public void submitQuery() {
+
+    }
 }
