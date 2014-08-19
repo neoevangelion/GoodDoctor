@@ -1,4 +1,4 @@
-package com.gooddoctor.engine.session;
+package com.gooddoctor.engine.account;
 
 /**
  * Created by Administrator on 2014/8/16.

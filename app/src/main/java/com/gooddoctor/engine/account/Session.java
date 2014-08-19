@@ -1,4 +1,4 @@
-package com.gooddoctor.engine.session;
+package com.gooddoctor.engine.account;
 
 import android.content.Context;
 

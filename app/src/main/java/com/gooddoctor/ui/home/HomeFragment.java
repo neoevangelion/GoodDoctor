@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.gooddoctor.R;
+import com.gooddoctor.ui.account.LoginActivity;
 import com.gooddoctor.ui.disease.DiseaseListActivity;
 import com.gooddoctor.ui.medicine.MedicineCategoryListActivity;
 import com.gooddoctor.ui.medicine.MedicineMapActivity;
@@ -45,6 +46,11 @@ public class HomeFragment extends Fragment {
 
     @OnClick(R.id.home_nearby_shop) void gotoMedicineMap() {
         Intent intent = new Intent(getActivity(), MedicineMapActivity.class);
+        startActivity(intent);
+    }
+
+    @OnClick(R.id.home_user_account) void gotoAccount() {
+        Intent intent = new Intent(getActivity(), LoginActivity.class);
         startActivity(intent);
     }
 }
