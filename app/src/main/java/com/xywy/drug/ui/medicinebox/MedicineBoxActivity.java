@@ -6,6 +6,7 @@ import android.widget.ListView;
 
 
 import com.xywy.drug.R;
+import com.xywy.drug.engine.account.Session;
 import com.zlianjie.framework.widget.TitleBar;
 
 
@@ -20,5 +21,15 @@ public class MedicineBoxActivity extends Activity {
 
         mTitleBar = (TitleBar)findViewById(R.id.person_title_bar);
         mListView = (ListView)findViewById(R.id.person_list_view);
+        refreshList();
+    }
+
+    private void refreshList() {
+        Session session = Session.defaultSession(this);
+        if (session == null) {
+
+        } else {
+
+        }
     }
 }

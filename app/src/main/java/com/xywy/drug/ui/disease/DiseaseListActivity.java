@@ -58,7 +58,12 @@ public class DiseaseListActivity extends Activity implements ExpandableListView.
             @Override
             public void onResponse(String s) {
                 Gson gson = new Gson();
-                DiseaseResultData data = gson.fromJson(s, DiseaseResultData.class);
+                DiseaseResultData data = null;
+                try {
+                    data = gson.fromJson(s, DiseaseResultData.class);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
                 mAdapter.setData(data);
                 mAdapter.notifyDataSetChanged();
             }

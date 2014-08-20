@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="galaxy">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/lib/libs/galaxy.jar!/" />
+      <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/GoodDoctor/lib/unspecified/libs/galaxy.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

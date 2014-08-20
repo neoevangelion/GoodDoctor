@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="Baidu-SpeechRecognitionUI-SDK-Android-1.6.0">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/lib/libs/Baidu-SpeechRecognitionUI-SDK-Android-1.6.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/GoodDoctor/lib/unspecified/libs/Baidu-SpeechRecognitionUI-SDK-Android-1.6.0.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

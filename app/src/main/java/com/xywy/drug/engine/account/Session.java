@@ -9,21 +9,34 @@ import com.android.volley.toolbox.Volley;
  * Created by Administrator on 2014/8/16.
  */
 public class Session {
-    private String mSessionId;
+    private String mUserId;
     private RequestQueue mRequestQueue;
+    private SessionIdCache mSessionIdCache;
+    private static Session mCurrentSession;
 
     public static void establishSession(Context context, Token token) {
 
     }
 
-    public static Session restoreSession(Context context, String sessionId) {
-        Session session = new Session(context);
-        session.mSessionId = sessionId;
-        return session;
+    public static Session defaultSession(Context context) {
+        if (mCurrentSession == null) {
+            Session session = new Session(context);
+            if (session.mUserId != null && session.mUserId.length() > 0) {
+                mCurrentSession = session;
+            }
+        }
+        return mCurrentSession;
     }
 
     private Session(Context context) {
         mRequestQueue = Volley.newRequestQueue(context);
+        mSessionIdCache = new PreferenceSessionIdCache(context);
+        mUserId = mSessionIdCache.restore();
+    }
+
+    public void abolish() {
+        mCurrentSession.mSessionIdCache.save("");
+        mCurrentSession = null;
     }
 
     public void getQuery() {
@@ -48,5 +61,9 @@ public class Session {
 
     public void submitQuery() {
 
+    }
+
+    public String getUserId() {
+        return mUserId;
     }
 }

@@ -8,11 +8,11 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.gson.Gson;
 import com.xywy.drug.data.gson.MedicineDetail;
 import com.xywy.drug.data.gson.MedicineEvaluation;
 import com.xywy.drug.engine.NetworkConst;
 import com.xywy.drug.engine.ProtocolConst;
-import com.google.gson.Gson;
 
 import java.lang.ref.WeakReference;
 
@@ -49,13 +49,19 @@ public class MedicineInfoFetcher {
             @Override
             public void onResponse(String string) {
                 Gson gson = new Gson();
-                MedicineDetail detail = gson.fromJson(string, MedicineDetail.class);
-                String result = detail.getResult();
-                if (result.equals(ProtocolConst.WRONG_RESULT)) {
+                MedicineDetail detail = null;
+                try {
+                    detail = gson.fromJson(string, MedicineDetail.class);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+                if (detail == null || detail.getResult().equals(ProtocolConst.WRONG_RESULT)) {
                     notifyListener(id, false, detail, mDetailListener);
                 } else {
                     notifyListener(id, true, detail, mDetailListener);
                 }
+
             }
         }, new Response.ErrorListener() {
             @Override
@@ -80,13 +86,19 @@ public class MedicineInfoFetcher {
             @Override
             public void onResponse(String string) {
                 Gson gson = new Gson();
-                MedicineEvaluation evaluation = gson.fromJson(string, MedicineEvaluation.class);
-                String result = evaluation.getResult();
-                if (result.equals(ProtocolConst.WRONG_RESULT)) {
+                MedicineEvaluation evaluation = null;
+                try {
+                    evaluation = gson.fromJson(string, MedicineEvaluation.class);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+                if (evaluation == null || evaluation.getResult().equals(ProtocolConst.WRONG_RESULT)) {
                     notifyListener(id, false, evaluation, mEvaluationListener);
                 } else {
                     notifyListener(id, true, evaluation, mEvaluationListener);
                 }
+
             }
         }, new Response.ErrorListener() {
             @Override

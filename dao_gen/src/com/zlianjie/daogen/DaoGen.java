@@ -9,14 +9,7 @@ import de.greenrobot.daogenerator.DaoGenerator;
  */
 public class DaoGen {
     public static void main(String[] args) throws Exception {
-        Schema schema = new Schema(1, "com.gooddoctor.data.dao");
-
-        Entity disease = schema.addEntity("DBDisease");
-        disease.addIdProperty().autoincrement();
-        disease.addStringProperty("diseaseId");
-        disease.addStringProperty("name");
-        disease.addStringProperty("pinyin");
-        disease.addIntProperty("productNum");
+        Schema schema = new Schema(1, "com.xywy.drug.data.dao");
 
         Entity boxedMedicine = schema.addEntity("DBBoxedMedicine");
         boxedMedicine.addIdProperty().autoincrement();
@@ -26,20 +19,30 @@ public class DaoGen {
 
         Entity medicineBox = schema.addEntity("DBMedicineBox");
         medicineBox.addIdProperty().autoincrement();
-        medicineBox.addStringProperty("personName");
-        medicineBox.addStringProperty("personImage");
-        medicineBox.addIntProperty("personGender");
-        medicineBox.addIntProperty("personAge");
-        medicineBox.addStringProperty("medicines");
+        medicineBox.addStringProperty("name");
+        medicineBox.addStringProperty("medicineIds");
+        medicineBox.addStringProperty("syncId");
+        medicineBox.addStringProperty("owner");
 
         Entity notification = schema.addEntity("DBNotification");
         notification.addIdProperty().autoincrement();
-        notification.addStringProperty("personName");
         notification.addStringProperty("medicineId");
         notification.addStringProperty("medicineName");
-        notification.addDateProperty("startDate");
-        notification.addIntProperty("repeatCount");
+        notification.addIntProperty("duration");
+        notification.addIntProperty("repeatPerDay");
+        notification.addStringProperty("timePoints");
+        notification.addStringProperty("syncId");
+        notification.addStringProperty("owner");
         notification.addBooleanProperty("notificationEnabled");
+
+        Entity searchHistory = schema.addEntity("DBSearchHistory");
+        searchHistory.addIdProperty().autoincrement();
+        searchHistory.addStringProperty("keyword");
+        searchHistory.addIntProperty("searchType");
+        searchHistory.addStringProperty("owner");
+        searchHistory.addStringProperty("syncId");
+
+
 
         new DaoGenerator().generateAll(schema, "../app/src/main/java/");
 

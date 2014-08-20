@@ -7,11 +7,13 @@ package com.xywy.drug.data.dao;
 public class DBNotification {
 
     private Long id;
-    private String personName;
     private String medicineId;
     private String medicineName;
-    private java.util.Date startDate;
-    private Integer repeatCount;
+    private Integer duration;
+    private Integer repeatPerDay;
+    private String timePoints;
+    private String syncId;
+    private String owner;
     private Boolean notificationEnabled;
 
     public DBNotification() {
@@ -21,13 +23,15 @@ public class DBNotification {
         this.id = id;
     }
 
-    public DBNotification(Long id, String personName, String medicineId, String medicineName, java.util.Date startDate, Integer repeatCount, Boolean notificationEnabled) {
+    public DBNotification(Long id, String medicineId, String medicineName, Integer duration, Integer repeatPerDay, String timePoints, String syncId, String owner, Boolean notificationEnabled) {
         this.id = id;
-        this.personName = personName;
         this.medicineId = medicineId;
         this.medicineName = medicineName;
-        this.startDate = startDate;
-        this.repeatCount = repeatCount;
+        this.duration = duration;
+        this.repeatPerDay = repeatPerDay;
+        this.timePoints = timePoints;
+        this.syncId = syncId;
+        this.owner = owner;
         this.notificationEnabled = notificationEnabled;
     }
 
@@ -37,14 +41,6 @@ public class DBNotification {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public String getPersonName() {
-        return personName;
-    }
-
-    public void setPersonName(String personName) {
-        this.personName = personName;
     }
 
     public String getMedicineId() {
@@ -63,20 +59,44 @@ public class DBNotification {
         this.medicineName = medicineName;
     }
 
-    public java.util.Date getStartDate() {
-        return startDate;
+    public Integer getDuration() {
+        return duration;
     }
 
-    public void setStartDate(java.util.Date startDate) {
-        this.startDate = startDate;
+    public void setDuration(Integer duration) {
+        this.duration = duration;
     }
 
-    public Integer getRepeatCount() {
-        return repeatCount;
+    public Integer getRepeatPerDay() {
+        return repeatPerDay;
     }
 
-    public void setRepeatCount(Integer repeatCount) {
-        this.repeatCount = repeatCount;
+    public void setRepeatPerDay(Integer repeatPerDay) {
+        this.repeatPerDay = repeatPerDay;
+    }
+
+    public String getTimePoints() {
+        return timePoints;
+    }
+
+    public void setTimePoints(String timePoints) {
+        this.timePoints = timePoints;
+    }
+
+    public String getSyncId() {
+        return syncId;
+    }
+
+    public void setSyncId(String syncId) {
+        this.syncId = syncId;
+    }
+
+    public String getOwner() {
+        return owner;
+    }
+
+    public void setOwner(String owner) {
+        this.owner = owner;
     }
 
     public Boolean getNotificationEnabled() {

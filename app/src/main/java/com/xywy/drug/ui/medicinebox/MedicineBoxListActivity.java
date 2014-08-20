@@ -8,18 +8,21 @@ import android.widget.ListView;
 import com.xywy.drug.R;
 import com.zlianjie.framework.widget.TitleBar;
 
+import butterknife.ButterKnife;
+import butterknife.InjectView;
+
 public class MedicineBoxListActivity extends Activity {
 
-    private TitleBar mTitleBar;
-    private ListView mListView;
+    @InjectView(R.id.family_title_bar) TitleBar mTitleBar;
+    @InjectView(R.id.family_list_view) ListView mListView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_family_medicine);
-
-        mTitleBar = (TitleBar)findViewById(R.id.family_title_bar);
-        mListView = (ListView)findViewById(R.id.family_list_view);
+        ButterKnife.inject(this);
     }
+
+
 
 }

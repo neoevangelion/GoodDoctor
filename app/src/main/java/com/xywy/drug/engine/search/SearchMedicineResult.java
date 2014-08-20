@@ -14,8 +14,11 @@ public class SearchMedicineResult extends SearchResult {
     public static SearchMedicineResult createResultFromJson(String json) {
         SearchMedicineResult result = new SearchMedicineResult();
         Gson gson = new Gson();
-        result.mMedicines = gson.fromJson(json, MedicineList.class);
-
+        try {
+            result.mMedicines = gson.fromJson(json, MedicineList.class);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         if (result.mMedicines.getResult() != null && result.mMedicines.getResult().equals(ProtocolConst.WRONG_RESULT)) {
             result.setSucceed(false);
         } else {
