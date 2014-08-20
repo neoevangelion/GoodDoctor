@@ -33,17 +33,17 @@ public class MedicineBoxEngine {
 
     }
 
-    public void addRemoteMedicineBox(DBMedicineBox entity, MedicineBoxEngineListener listener) {
+    public void addRemoteMedicineBox(List<MedicineBox> entity, MedicineBoxEngineListener listener) {
         final int id = addListener(listener);
 
     }
 
-    public void deleteRemoteMedicineBox(DBMedicineBox entity, MedicineBoxEngineListener listener) {
+    public void deleteRemoteMedicineBox(List<MedicineBox> entity, MedicineBoxEngineListener listener) {
         final int id = addListener(listener);
 
     }
 
-    public void updateRemoteMedicineBox(DBMedicineBox entity, MedicineBoxEngineListener listener) {
+    public void updateRemoteMedicineBox(List<MedicineBox> entity, MedicineBoxEngineListener listener) {
         final int id = addListener(listener);
 
     }
@@ -57,9 +57,12 @@ public class MedicineBoxEngine {
 
     public void deleteLocalMedicineBox(DBMedicineBox entity) {
         DBMedicineBoxDao dao = DataUtil.getMedicineBoxDao(mContext);
-        QueryBuilder<DBMedicineBox> queryBuilder = dao.queryBuilder();
-        DeleteQuery<DBMedicineBox> deleteQuery = queryBuilder.where(DBMedicineBoxDao.Properties.Id.eq(entity.getId())).buildDelete();
-        deleteQuery.executeDeleteWithoutDetachingEntities();
+        dao.delete(entity);
+    }
+
+    public void deleteLocalMedicineBox(List<DBMedicineBox> entitys) {
+        DBMedicineBoxDao dao = DataUtil.getMedicineBoxDao(mContext);
+        dao.deleteInTx(entitys);
     }
 
     public void addLocalMedicineBox(DBMedicineBox entity) {
@@ -67,9 +70,19 @@ public class MedicineBoxEngine {
         dao.insert(entity);
     }
 
+    public void addLocalMedicineBox(List<DBMedicineBox> entitys) {
+        DBMedicineBoxDao dao = DataUtil.getMedicineBoxDao(mContext);
+        dao.insertInTx(entitys);
+    }
+
     public void updateLocalMedicineBox(DBMedicineBox entity) {
         DBMedicineBoxDao dao = DataUtil.getMedicineBoxDao(mContext);
         dao.insertOrReplace(entity);
+    }
+
+    public void updateLocalMedicineBox(List<DBMedicineBox> entitys) {
+        DBMedicineBoxDao dao = DataUtil.getMedicineBoxDao(mContext);
+        dao.insertOrReplaceInTx(entitys);
     }
 
     private int addListener(MedicineBoxEngineListener listener) {
